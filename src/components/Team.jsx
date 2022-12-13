@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 
-import Lazaro from 'src/images/avatars/lazaro.jpeg'
+import Lazaro from 'src/images/avatars/Lazaro.jpeg'
 import Garrido from 'src/images/avatars/Garrido.jpeg'
 import Inmo from 'src/images/avatars/Inmo.jpeg'
 
