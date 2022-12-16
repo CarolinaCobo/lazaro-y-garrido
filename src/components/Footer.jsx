@@ -14,7 +14,9 @@ export function Footer() {
             <div className="-my-1 flex justify-center gap-x-6">
               <NavLink href="#servicios">Servicios</NavLink>
               <NavLink href="#nuestro-equipo">Nuestro equipo</NavLink>
-              <NavLink href="#inmobiliaria">Inmobiliaria</NavLink>
+              <NavLink href="https://www.lginmobiliaria.es/">
+                Inmobiliaria
+              </NavLink>
               <NavLink href="#prensa">Prensa</NavLink>
               <NavLink href="/contacto">Contacto</NavLink>
             </div>

@@ -1,7 +1,7 @@
-import { Fragment } from 'react'
-import Link from 'next/link'
 import { Popover, Transition } from '@headlessui/react'
 import clsx from 'clsx'
+import Link from 'next/link'
+import { Fragment } from 'react'
 
 import { Button } from '@/components/Button'
 import { Container } from '@/components/Container'
@@ -77,11 +77,14 @@ function MobileNavigation() {
             as="div"
             className="absolute inset-x-0 top-full mt-4 flex origin-top flex-col rounded-2xl bg-white p-4 text-lg tracking-tight text-slate-900 shadow-xl ring-1 ring-slate-900/5"
           >
-            <MobileNavLink href="#servicios">Features</MobileNavLink>
-            <MobileNavLink href="#nuestro-equipo">Testimonials</MobileNavLink>
-            <MobileNavLink href="#inmobiliaria">Pricing</MobileNavLink>
-            <hr className="m-2 border-slate-300/40" />
-            <MobileNavLink href="/login">Sign in</MobileNavLink>
+            <MobileNavLink href="/#servicios">Servicios</MobileNavLink>
+            <MobileNavLink href="/#nuestro-equipo">
+              Nuestro Equipo
+            </MobileNavLink>
+            <MobileNavLink href="https://www.lginmobiliaria.es/">
+              Inmobiliaria
+            </MobileNavLink>
+            <MobileNavLink href="/#prensa">Prensa</MobileNavLink>
           </Popover.Panel>
         </Transition.Child>
       </Transition.Root>
@@ -101,7 +104,9 @@ export function Header() {
             <div className="hidden md:flex md:gap-x-6">
               <NavLink href="/#servicios">Servicios</NavLink>
               <NavLink href="/#nuestro-equipo">Nuestro equipo</NavLink>
-              <NavLink href="/#inmobiliaria">Inmobiliaria</NavLink>
+              <NavLink href="https://www.lginmobiliaria.es/" target={'_blank'}>
+                Inmobiliaria
+              </NavLink>
               <NavLink href="/#prensa">Prensa</NavLink>
             </div>
           </div>

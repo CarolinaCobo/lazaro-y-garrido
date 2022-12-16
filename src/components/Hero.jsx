@@ -28,7 +28,7 @@ export function Hero() {
       </p>
       <div className="mt-10 flex justify-center gap-x-6">
         <Button href="/contacto">Contacto</Button>
-        <Button href="/#servicios" className="bg-mallorca-600 text-white">
+        <Button href="/servicios" className="bg-mallorca-600 text-white">
           Servicios
         </Button>
       </div>

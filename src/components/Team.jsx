@@ -9,7 +9,7 @@ import { EnvelopeIcon, PhoneIcon } from '@heroicons/react/24/outline'
 
 import { Container } from '@/components/Container'
 
-const people = [
+export const people = [
   {
     name: 'ANTONIO LÁZARO',
     role: 'Abogado',
@@ -41,7 +41,11 @@ const people = [
 
 export function Team() {
   return (
-    <section id="team" aria-label="team" className="bg-slate-50 py-20 sm:py-32">
+    <section
+      id="nuestro-equipo"
+      aria-label="team"
+      className="bg-slate-50 py-20 sm:py-32"
+    >
       <Container>
         <div className="mx-auto max-w-2xl md:text-center">
           <h2 className="font-display text-3xl tracking-tight text-slate-900 sm:text-4xl">
