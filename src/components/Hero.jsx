@@ -6,7 +6,7 @@ import { Container } from '@/components/Container'
 export function Hero() {
   return (
     <Container className="pt-20 pb-16 text-center lg:pt-32">
-      <h1 className="mx-auto max-w-4xl font-display text-4xl font-medium tracking-tight text-slate-900 sm:text-6xl">
+      <h1 className="mx-auto max-w-3xl font-display text-4xl font-medium tracking-tight text-slate-900 sm:text-6xl">
         Lázaro & Garrido
         <span className="text-mallorca relative whitespace-nowrap ">
           <svg
