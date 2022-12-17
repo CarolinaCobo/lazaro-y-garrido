@@ -6,7 +6,7 @@ import { Container } from '@/components/Container'
 export function Hero() {
   return (
     <Container className="pt-20 pb-16 text-center lg:pt-32">
-      <h1 className="mx-auto max-w-3xl font-display text-4xl font-medium tracking-tight text-slate-900 sm:text-6xl">
+      <h1 className="mx-auto max-w-2xl font-display text-2xl font-medium tracking-tight text-slate-900 sm:text-6xl">
         Lázaro & Garrido
         <span className="text-mallorca relative whitespace-nowrap ">
           <svg
@@ -21,14 +21,14 @@ export function Hero() {
         </span>
         en Palma de Mallorca
       </h1>
-      <p className="mx-auto mt-6 max-w-2xl text-lg tracking-tight text-slate-700">
+      <p className="mx-auto mt-6 max-w-2xl text-sm tracking-tight text-slate-700 md:text-xl">
         Servicios de asesoría y asistencia letrada en todo el territorio
         nacional para la defensa y representación en procedimientos de orden
         civil, penal, laboral y administrativo.
       </p>
       <div className="mt-10 flex justify-center gap-x-6">
         <Button href="/contacto">Contacto</Button>
-        <Button href="/servicios" className="bg-mallorca-600 text-white">
+        <Button href="/#servicios" className="bg-mallorca-600 text-white">
           Servicios
         </Button>
       </div>

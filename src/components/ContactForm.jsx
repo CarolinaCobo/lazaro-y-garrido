@@ -1,13 +1,5 @@
 import Link from 'next/link'
-
-import Image from 'next/image'
-
-import Lazaro from 'src/images/avatars/Lazaro.jpeg'
-import Garrido from 'src/images/avatars/Garrido.jpeg'
-import Inmo from 'src/images/avatars/Inmo.jpeg'
-
 import { people } from './Team'
-
 import { EnvelopeIcon, PhoneIcon } from '@heroicons/react/24/outline'
 
 export function ContactForm() {
@@ -86,8 +78,7 @@ export function ContactForm() {
         ))}
       </ul>
       <p className="text-md mt-6 text-gray-500">
-        Si no sabes quien es la mejor persona para contactar puedes escribirnos
-        a{' '}
+        Si no sabes con quien deberias contactar puedes escribirnos a{' '}
         <Link
           href="mailto:info@lazarogarrido.com"
           className="font-medium text-mallorca-600 hover:underline"
@@ -128,7 +119,7 @@ export function ContactForm() {
                   htmlFor="last-name"
                   className="block text-sm font-medium text-gray-700"
                 >
-                  Apellido
+                  Apellidos
                 </label>
                 <input
                   type="text"
