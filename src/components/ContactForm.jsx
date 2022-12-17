@@ -1,9 +1,30 @@
 import Link from 'next/link'
+import axios from 'axios'
 import { people } from './Team'
 import { EnvelopeIcon, PhoneIcon } from '@heroicons/react/24/outline'
 import { Button } from '@/components/Button'
+import { useState } from 'react'
+import { useForm } from 'react-hook-form'
+import { Modal } from './Modal'
 
 export function ContactForm() {
+  const { register, handleSubmit, reset } = useForm()
+
+  const [open, setOpen] = useState(false)
+
+  console.log(register)
+
+  const onSubmit = (data) => {
+    console.log(data)
+    axios
+      .post('https://eo7vnosi4j5466v.m.pipedream.net', data)
+      .then((response) => {
+        setOpen(true)
+        reset()
+      })
+      .catch((e) => console.error(e))
+  }
+
   return (
     <>
       <h2 className="text-3xl font-bold tracking-tight text-gray-900">
@@ -91,8 +112,9 @@ export function ContactForm() {
       <h2 className=" mt-20 text-3xl font-bold tracking-tight text-gray-900">
         Formulario de contacto{' '}
       </h2>
+
       <form
-        action="https://formsubmit.co/ccobo.dev@email.com"
+        onSubmit={handleSubmit(onSubmit)}
         method="POST"
         className="mt-10 gap-y-8 gap-x-6 sm:grid-cols-2"
       >
@@ -107,9 +129,11 @@ export function ContactForm() {
                   Nombre
                 </label>
                 <input
+                  {...register('first-name')}
                   type="text"
                   name="first-name"
                   id="first-name"
+                  placeholder="Maria"
                   autoComplete="given-name"
                   className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-mallorca-500 focus:ring-mallorca-500 sm:text-sm"
                 />
@@ -122,7 +146,9 @@ export function ContactForm() {
                   Apellidos
                 </label>
                 <input
+                  {...register('last-name')}
                   type="text"
+                  placeholder="Pérez"
                   name="last-name"
                   id="last-name"
                   autoComplete="family-name"
@@ -132,15 +158,16 @@ export function ContactForm() {
 
               <div className="col-span-6 sm:col-span-4">
                 <label
-                  htmlFor="email-address"
+                  htmlFor="email"
                   className="block text-sm font-medium text-gray-700"
                 >
                   Dirección de correo electrónico
                 </label>
                 <input
+                  {...register('email')}
                   type="text"
-                  name="email-address"
-                  id="email-address"
+                  name="email"
+                  id="email"
                   autoComplete="email"
                   placeholder="ej: email@email.com"
                   className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-mallorca-500 focus:ring-mallorca-500 sm:text-sm"
@@ -155,6 +182,7 @@ export function ContactForm() {
                 </label>
                 <div className="mt-1">
                   <textarea
+                    {...register('message')}
                     id="message"
                     name="message"
                     rows={3}
@@ -169,6 +197,7 @@ export function ContactForm() {
               Enviar
             </Button>
           </div>
+          <Modal open={open} setOpen={setOpen} />
         </div>
       </form>
     </>
