@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import { people } from './Team'
 import { EnvelopeIcon, PhoneIcon } from '@heroicons/react/24/outline'
+import { Button } from '@/components/Button'
 
 export function ContactForm() {
   return (
@@ -98,7 +99,7 @@ export function ContactForm() {
         <div className="overflow-hidden shadow sm:rounded-md">
           <div className="bg-white px-4 py-5 sm:p-6">
             <div className="grid grid-cols-2 gap-2">
-              <div className="col-span-6 sm:col-span-3">
+              <div className="col-span-6 sm:col-span-4">
                 <label
                   htmlFor="first-name"
                   className="block text-sm font-medium text-gray-700"
@@ -113,8 +114,7 @@ export function ContactForm() {
                   className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-mallorca-500 focus:ring-mallorca-500 sm:text-sm"
                 />
               </div>
-
-              <div className="col-span-6 sm:col-span-3">
+              <div className="col-span-6 sm:col-span-4">
                 <label
                   htmlFor="last-name"
                   className="block text-sm font-medium text-gray-700"
@@ -165,6 +165,9 @@ export function ContactForm() {
                 </div>
               </div>
             </div>
+            <Button className="mt-6 w-full md:w-24" type="submit">
+              Enviar
+            </Button>
           </div>
         </div>
       </form>
