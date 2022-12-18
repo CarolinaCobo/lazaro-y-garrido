@@ -22,6 +22,7 @@ function MobileNavIcon({ open }) {
       className="h-3.5 w-3.5 overflow-visible stroke-slate-700"
       fill="none"
       strokeWidth={2}
+      height="100%"
       strokeLinecap="round"
     >
       <path
