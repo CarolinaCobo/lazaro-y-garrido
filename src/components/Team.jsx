@@ -1,12 +1,9 @@
 import Image from 'next/image'
 import Link from 'next/link'
-
 import Lazaro from 'src/images/avatars/Lazaro.jpeg'
 import Garrido from 'src/images/avatars/Garrido.jpeg'
 import Inmo from 'src/images/avatars/Inmo.jpeg'
-
 import { EnvelopeIcon, PhoneIcon } from '@heroicons/react/24/outline'
-
 import { Container } from '@/components/Container'
 
 export const people = [

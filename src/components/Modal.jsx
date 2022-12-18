@@ -1,12 +1,9 @@
-import { Fragment } from 'react'
+import { Button } from '@/components/Button'
 import { Dialog, Transition } from '@headlessui/react'
 import { CheckIcon } from '@heroicons/react/24/outline'
-import { Button } from '@/components/Button'
-import { useRef } from 'react'
+import { Fragment } from 'react'
 
 export function Modal({ open, setOpen }) {
-  const cancelButtonRef = useRef(null)
-
   return (
     <Transition.Root show={open} as={Fragment}>
       <Dialog as="div" className="relative z-10" onClose={setOpen}>
