@@ -6,6 +6,7 @@ import { Header } from '@/components/Header'
 import { Hero } from '@/components/Hero'
 import { Team } from '@/components/Team'
 import { Services } from '@/components/Services'
+import Logo from 'src/images/og/og-logo.png'
 
 export default function Home() {
   return (
@@ -22,11 +23,7 @@ export default function Home() {
           property="og:title"
           content="Lázaro y Garrido - Abogados en Palma de Mallorca"
         />
-        <meta
-          key="og:image"
-          property="og:image"
-          content="src/images/og/og-logo.png"
-        />
+        <meta key="og:image" property="og:image" content={Logo} />
         <meta
           key="og:description"
           property="og:description"
