@@ -1,7 +1,7 @@
 import { Address } from './Address'
 import { ContactForm } from './ContactForm'
 
-export function ContactPage({ children }) {
+export function ContactPage() {
   return (
     <>
       <div className="bg-white">

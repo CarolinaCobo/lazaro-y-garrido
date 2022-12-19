@@ -11,7 +11,7 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Lázaro & Garrido</title>
+        <title>Lázaro & Garrido - Abogados</title>
         <meta
           name="description"
           content="Abogados en Palma de Mallorca. No defendemos casos, defendemos personas."
@@ -30,12 +30,12 @@ export default function Home() {
         <meta
           key="og:description"
           property="og:description"
-          content="Abogados en Mallorca. No defendemos casos, defendemos personas"
+          content="No defendemos casos, defendemos personas."
         />
         <meta
           key="description"
           property="description"
-          content="Abogados en Mallorca. No defendemos casos, defendemos personas"
+          content="No defendemos casos, defendemos personas."
         />
         <meta property="og:url" content="http://www.lazarogarrido.com/" />
       </Head>
