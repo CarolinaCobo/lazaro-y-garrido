@@ -12,7 +12,7 @@ export function CallToAction() {
           <h2 className="font-display text-3xl tracking-tight text-white sm:text-4xl">
             Para más información{' '}
           </h2>
-          <Button href="/contact" color="white" className="mt-10">
+          <Button href="/contacto" color="white" className="mt-10">
             Contacto
           </Button>
         </div>
