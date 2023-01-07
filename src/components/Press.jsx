@@ -81,7 +81,11 @@ export function Press() {
               <ul role="list" className="flex flex-col gap-y-8">
                 {column.map((press, pressIndex) => (
                   <li key={pressIndex}>
-                    <Link href={press.href} className="">
+                    <Link
+                      href={press.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
                       <h3 className="font-display text-lg leading-7 text-mallorca-600 hover:text-mallorca-100 hover:underline hover:underline-offset-2">
                         {press.headLine}
                       </h3>
