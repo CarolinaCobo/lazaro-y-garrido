@@ -90,6 +90,7 @@ function MobileNavigation() {
             <MobileNavLink href="https://www.lginmobiliaria.es/">
               Inmobiliaria
             </MobileNavLink>
+            <MobileNavLink href="/blog">Blog</MobileNavLink>
             <MobileNavLink href="/#prensa">Prensa</MobileNavLink>
           </Popover.Panel>
         </Transition.Child>
@@ -113,6 +114,7 @@ export function Header() {
               <NavLink href="https://www.lginmobiliaria.es/" target={'_blank'}>
                 Inmobiliaria
               </NavLink>
+              <NavLink href="/blog">Blog</NavLink>
               <NavLink href="/#prensa">Prensa</NavLink>
             </div>
           </div>
