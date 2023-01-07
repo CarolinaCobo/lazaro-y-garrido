@@ -7,9 +7,15 @@ import { Container } from '@/components/Container'
 import { Logo } from '@/components/Logo'
 import { NavLink } from '@/components/NavLink'
 
-function MobileNavLink({ href, children }) {
+function MobileNavLink({ href, children, rel, target }) {
   return (
-    <Popover.Button as={Link} href={href} className="block w-full p-2">
+    <Popover.Button
+      as={Link}
+      href={href}
+      target={target}
+      rel={rel}
+      className="block w-full p-2"
+    >
       {children}
     </Popover.Button>
   )

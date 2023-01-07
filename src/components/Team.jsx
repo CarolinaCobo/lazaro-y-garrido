@@ -85,6 +85,8 @@ export function Team() {
                           href={`mailto:${person.email}`}
                           className="flex items-center text-mallorca-600 hover:text-mallorca-100 hover:underline hover:underline-offset-2"
                           aria-label="correo"
+                          target="_blank"
+                          rel="noopener noreferrer"
                         >
                           <EnvelopeIcon
                             className=" h-6 w-6"
@@ -101,6 +103,8 @@ export function Team() {
                               href={`tel:${person.phone}`}
                               className="flex text-mallorca-600 hover:text-mallorca-100 hover:underline hover:underline-offset-2"
                               aria-label="telefono"
+                              target="_blank"
+                              rel="noopener noreferrer"
                             >
                               <PhoneIcon
                                 className="h-6 w-6 flex-shrink-0"
@@ -114,6 +118,8 @@ export function Team() {
                               href={`https://wa.me/${person.whatsapp}`}
                               className="flex flex-row-reverse text-mallorca-600 hover:text-mallorca-100 hover:underline hover:underline-offset-2"
                               aria-label="Whatsapp number"
+                              target="_blank"
+                              rel="noopener noreferrer"
                             >
                               <span className="ml-3">WhatsApp</span>
                               <svg

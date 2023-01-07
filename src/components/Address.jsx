@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import { Button } from '@/components/Button'
 
 export function Address() {
   return (
@@ -15,7 +16,15 @@ export function Address() {
             Carrer de la Reina Maria Cristina, 4, 2°-3ª,
             <span className="block">Palma, Illes Balears</span>
           </Link>
-          <h3 className="text-lg font-medium text-gray-900"></h3>
+          <Button className="mt-6 mb-8 w-full md:w-32">
+            <a
+              target="_blank"
+              href="https://goo.gl/maps/E3abA2DAn8Ny2h7D6"
+              rel="noopener noreferrer"
+            >
+              Cómo llegar
+            </a>
+          </Button>
         </div>
         <div className=" sm:contents lg:relative lg:block lg:flex-1">
           <iframe

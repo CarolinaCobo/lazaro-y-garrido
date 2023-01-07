@@ -8,11 +8,14 @@ import { useForm } from 'react-hook-form'
 import { Modal } from './Modal'
 
 export function ContactForm() {
-  const { register, handleSubmit, reset } = useForm()
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+    reset,
+  } = useForm()
 
   const [open, setOpen] = useState(false)
-
-  console.log(register)
 
   const onSubmit = (data) => {
     console.log(data)
@@ -51,8 +54,10 @@ export function ContactForm() {
                         href={`mailto:${person.email}`}
                         className="flex items-center text-mallorca-600 hover:text-mallorca-100 hover:underline hover:underline-offset-2"
                         aria-label="correo"
+                        target="_blank"
+                        rel="noopener noreferrer"
                       >
-                        <EnvelopeIcon className=" h-6 w-6" aria-hidden="true" />
+                        <EnvelopeIcon className="h-6 w-6" aria-hidden="true" />
                         <span className=" ml-3">{person.email}</span>
                       </Link>
                     </div>
@@ -64,6 +69,8 @@ export function ContactForm() {
                             href={`tel:${person.phone}`}
                             className="flex text-mallorca-600 hover:text-mallorca-100 hover:underline hover:underline-offset-2"
                             aria-label="telefono"
+                            target="_blank"
+                            rel="noopener noreferrer"
                           >
                             <PhoneIcon
                               className="h-6 w-6 flex-shrink-0"
@@ -77,10 +84,12 @@ export function ContactForm() {
                             href={`https://wa.me/${person.whatsapp}`}
                             className="flex flex-row-reverse text-mallorca-600 hover:text-mallorca-100 hover:underline hover:underline-offset-2"
                             aria-label="Whatsapp number"
+                            target="_blank"
+                            rel="noopener noreferrer"
                           >
                             <span className="ml-3">WhatsApp</span>
                             <svg
-                              class="h-6 w-6 fill-current text-green-400"
+                              className="h-6 w-6 fill-current text-green-400"
                               xmlns="http://www.w3.org/2000/svg"
                               viewBox="0 0 448 512"
                             >
@@ -123,48 +132,58 @@ export function ContactForm() {
             <div className="grid grid-cols-2 gap-2">
               <div className="col-span-6 sm:col-span-4">
                 <label
-                  htmlFor="first-name"
+                  htmlFor="firstName"
                   className="block text-sm font-medium text-gray-700"
                 >
-                  Nombre
+                  Nombre<span className="text-mallorca-500 ">*</span>
                 </label>
                 <input
-                  {...register('first-name')}
+                  {...register('firstName', { required: true })}
                   type="text"
-                  name="first-name"
-                  id="first-name"
+                  name="firstName"
+                  id="firstName"
                   placeholder="Maria"
                   autoComplete="given-name"
                   className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-mallorca-500 focus:ring-mallorca-500 sm:text-sm"
                 />
+                {errors.firstName && (
+                  <span className="text-red-600">
+                    Este campo es obligatorio
+                  </span>
+                )}
               </div>
               <div className="col-span-6 sm:col-span-4">
                 <label
-                  htmlFor="last-name"
+                  htmlFor="lastName"
                   className="block text-sm font-medium text-gray-700"
                 >
-                  Apellidos
+                  Apellidos<span className="text-mallorca-500 ">*</span>
                 </label>
                 <input
-                  {...register('last-name')}
+                  {...register('lastName', { required: true })}
                   type="text"
                   placeholder="Pérez"
-                  name="last-name"
-                  id="last-name"
+                  name="lastName"
+                  id="lastName"
                   autoComplete="family-name"
                   className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-mallorca-500 focus:ring-mallorca-500 sm:text-sm"
                 />
+                {errors.lastName && (
+                  <span className="text-red-600">
+                    Este campo es obligatorio
+                  </span>
+                )}
               </div>
-
               <div className="col-span-6 sm:col-span-4">
                 <label
                   htmlFor="email"
                   className="block text-sm font-medium text-gray-700"
                 >
                   Dirección de correo electrónico
+                  <span className="text-mallorca-500 ">*</span>
                 </label>
                 <input
-                  {...register('email')}
+                  {...register('email', { required: true })}
                   type="text"
                   name="email"
                   id="email"
@@ -172,17 +191,22 @@ export function ContactForm() {
                   placeholder="ej: email@email.com"
                   className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-mallorca-500 focus:ring-mallorca-500 sm:text-sm"
                 />
+                {errors.email && (
+                  <span className="text-red-600">
+                    Este campo es obligatorio
+                  </span>
+                )}
               </div>
               <div className="col-span-6 sm:col-span-4">
                 <label
                   htmlFor="message"
                   className=" text-sm font-medium text-gray-700"
                 >
-                  Mensaje
+                  Mensaje<span className="text-mallorca-500 ">*</span>
                 </label>
                 <div className="mt-1">
                   <textarea
-                    {...register('message')}
+                    {...register('message', { required: true })}
                     id="message"
                     name="message"
                     rows={3}
@@ -190,6 +214,11 @@ export function ContactForm() {
                     placeholder="Desearía saber más sobre..."
                     defaultValue={''}
                   />
+                  {errors.message && (
+                    <span className="text-red-600">
+                      Este campo es obligatorio
+                    </span>
+                  )}
                 </div>
               </div>
             </div>

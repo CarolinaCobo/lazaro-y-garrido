@@ -13,7 +13,11 @@ export function Footer() {
             <div className="-mx-2 -my-2 flex flex-wrap justify-center">
               <NavLink href="#servicios">Servicios</NavLink>
               <NavLink href="#nuestro-equipo">Nuestro equipo</NavLink>
-              <NavLink href="https://www.lginmobiliaria.es/">
+              <NavLink
+                href="https://www.lginmobiliaria.es/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 Inmobiliaria
               </NavLink>
               <NavLink href="#prensa">Prensa</NavLink>
@@ -27,6 +31,8 @@ export function Footer() {
               href="https://es-la.facebook.com/people/L%C3%A1zaro-Garrido-Abogados/100053003869079/"
               className="group"
               aria-label="Facebook"
+              target="_blank"
+              rel="noopener noreferrer"
             >
               <svg
                 aria-hidden="true"
