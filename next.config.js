@@ -4,6 +4,9 @@ const nextConfig = {
   experimental: {
     scrollRestoration: true,
   },
+  images: {
+    domains: ['images.ctfassets.net'],
+  },
 }
 
 module.exports = nextConfig

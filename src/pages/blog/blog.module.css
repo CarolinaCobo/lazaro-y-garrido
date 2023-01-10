@@ -1,0 +1,63 @@
+.post {
+  @apply mx-2 max-w-3xl text-base leading-relaxed text-slate-800 sm:mx-6 md:mx-auto md:text-base;
+}
+
+.post p,
+.post ul,
+.post ol {
+  @apply my-6;
+}
+
+.post a {
+  @apply relative bg-gradient-to-b from-mallorca-500 to-mallorca-700 bg-clip-text text-transparent transition duration-500 ease-in-out;
+}
+
+.post a::after {
+  content: '';
+  @apply absolute -bottom-1 left-0 right-0 h-0.5 bg-gradient-to-b from-mallorca-500 to-mallorca-700;
+}
+
+.post a:hover,
+.post a:hover .post a::after {
+  @apply from-mallorca-600 to-mallorca-600;
+}
+
+.post h2 {
+  @apply mt-12 mb-4 text-2xl font-semibold leading-snug;
+}
+
+.post h3 {
+  @apply mt-8 mb-4 text-2xl font-medium leading-snug;
+}
+
+.post ul > li {
+  @apply ml-6 list-disc;
+}
+
+.post ol > li {
+  @apply ml-6 list-decimal;
+}
+
+.post > li > p {
+  @apply inline;
+}
+
+.post blockquote {
+  @apply rounded-r border-l-8 border-slate-800 bg-slate-200 py-2 px-6 text-xl font-semibold leading-snug text-slate-800 shadow;
+}
+
+.post code {
+  @apply overflow-y-scroll rounded bg-slate-200 p-2;
+}
+
+.post i > code {
+  @apply inline p-1;
+}
+
+.post pre > code {
+  @apply bg-slate-200 p-2 text-sm;
+}
+
+.post div > pre > code {
+  @apply block overflow-y-scroll bg-slate-200 p-4 text-base;
+}

@@ -64,7 +64,6 @@ export function Team() {
                   src={person.imageUrl}
                   width={200}
                   height={240}
-                  layout="responsive"
                   className="rounded-lg shadow-lg"
                   alt="miembro del equipo"
                 />
@@ -123,7 +122,7 @@ export function Team() {
                             >
                               <span className="ml-3">WhatsApp</span>
                               <svg
-                                class="h-6 w-6 fill-current text-green-400"
+                                className="h-6 w-6 fill-current text-green-400"
                                 xmlns="http://www.w3.org/2000/svg"
                                 viewBox="0 0 448 512"
                               >
