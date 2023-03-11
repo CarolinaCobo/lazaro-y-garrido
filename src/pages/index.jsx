@@ -7,6 +7,8 @@ import { Hero } from '@/components/Hero'
 import { Team } from '@/components/Team'
 import { Services } from '@/components/Services'
 
+// import ogImage from '../images/og/home-og.png'
+
 export default function Home() {
   return (
     <>
@@ -24,7 +26,7 @@ export default function Home() {
         />
         <meta
           property="og:image"
-          content="images/og/home-og.png"
+          content="../images/og/home-og.png"
           key="og:image"
         />
         <meta
