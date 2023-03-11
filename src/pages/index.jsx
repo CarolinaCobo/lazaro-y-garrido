@@ -24,7 +24,7 @@ export default function Home() {
         />
         <meta
           property="og:image"
-          content="/images/og/home-og.png"
+          content="images/og/home-og.png"
           key="og:image"
         />
         <meta
