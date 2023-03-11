@@ -20,7 +20,7 @@ export default function Home() {
         <meta
           key="og:title"
           property="og:title"
-          content="Lázaro y Garrido - Abogados en Palma de Mallorca"
+          content="Lázaro & Garrido - Abogados en Palma de Mallorca"
         />
         <meta
           key="og:image"
