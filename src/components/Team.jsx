@@ -2,7 +2,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import Lazaro from 'src/images/avatars/Lazaro.jpeg'
 import Garrido from 'src/images/avatars/Garrido.jpeg'
-import Inmo from 'src/images/avatars/Inmo.jpeg'
+import Monica from 'src/images/avatars/Monica.jpeg'
 import { EnvelopeIcon, PhoneIcon } from '@heroicons/react/24/outline'
 import { Container } from '@/components/Container'
 
@@ -28,7 +28,7 @@ export const people = [
   {
     name: 'MÓNICA HERNÁNDEZ',
     role: 'Agente Inmobiliario',
-    imageUrl: Inmo,
+    imageUrl: Monica,
     bio: 'Diplomada en Magisterio por la Universidad de las Islas Baleares. Ejerce como como Asesora y comercial Inmobiliaria y dirige en el departamento inmobiliario del despacho.  Cuenta con una dilatada experiencia con más de 20 años en el sector comercial.     ',
     email: 'monica@lazarogarrido.com',
     phone: '',
@@ -55,18 +55,17 @@ export function Team() {
 
         <ul
           role="list"
-          className="mt-16 space-y-12 lg:grid lg:grid-cols-2 lg:items-start lg:gap-x-8 lg:gap-y-12 lg:space-y-0"
+          className="mt-16 space-y-12 lg:grid lg:grid-cols-2 lg:items-start lg:gap-x-8 lg:gap-y-12 lg:space-y-0 "
         >
           {people.map((person) => (
             <li key={person.name}>
-              <div className="mb-8 space-y-4 sm:grid sm:grid-cols-3 sm:gap-6 sm:space-y-0 lg:gap-8">
+              <div className="mb-8 space-y-4 sm:grid sm:grid-cols-3 sm:space-y-0 lg:gap-8 ">
                 <Image
                   src={person.imageUrl}
                   width={200}
                   height={240}
-                  layout="responsive"
-                  className="rounded-lg shadow-lg"
-                  alt="miembro del equipo"
+                  className="sm:h-45 h-auto max-w-full rounded-lg shadow-lg sm:w-40"
+                  alt={`foto de ${person.name}`}
                 />
                 <div className="sm:col-span-2">
                   <div className="space-y-2">
@@ -123,7 +122,7 @@ export function Team() {
                             >
                               <span className="ml-3">WhatsApp</span>
                               <svg
-                                class="h-6 w-6 fill-current text-green-400"
+                                className="h-6 w-6 fill-current text-green-400"
                                 xmlns="http://www.w3.org/2000/svg"
                                 viewBox="0 0 448 512"
                               >
