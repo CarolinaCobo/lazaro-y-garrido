@@ -20,7 +20,7 @@ export default function Contact() {
         <meta
           key="og:image"
           property="og:image"
-          content="src/images/og/ogimage.png"
+          content="/images/og/home-og.png"
         />
         <meta
           key="og:description"

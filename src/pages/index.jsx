@@ -23,14 +23,14 @@ export default function Home() {
           content="Lázaro & Garrido - Abogados en Palma de Mallorca"
         />
         <meta
-          key="og:image"
           property="og:image"
-          content="src/images/og/ogimage.png"
+          content="/images/og/home-og.png"
+          key="og:image"
         />
         <meta
           key="og:description"
           property="og:description"
-          content="No defendemos casos, defendemos personas."
+          content="No defendemos casos, defendemos personas. Abogados en Palma de Mallorca y todo el territorio nacional."
         />
         <meta
           key="description"
