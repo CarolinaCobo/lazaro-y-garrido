@@ -20,7 +20,7 @@ export function Hero() {
         </div>
       </div>
       <Container className="relative pt-20 pb-16 text-center lg:pt-32">
-        <h1 className="mx-auto max-w-2xl font-display text-2xl font-medium tracking-tight text-white sm:text-6xl">
+        <h1 className="mx-auto max-w-2xl font-display text-4xl font-medium tracking-tight text-white sm:text-6xl">
           Lázaro & Garrido
           <span className="text-mallorca relative whitespace-nowrap ">
             <svg
@@ -35,11 +35,10 @@ export function Hero() {
           </span>
         </h1>
         <p className="mx-auto mt-6 max-w-3xl text-sm tracking-tight text-slate-100 md:text-xl">
-          Servicios de asesoría y asistencia letrada para la defensa y
-          representación en procedimientos de orden civil, penal, laboral y
-          administrativo.
+          Asesoría y asistencia letrada para la defensa y representación en
+          procedimientos de orden civil, penal, laboral y administrativo.
         </p>
-        <p className="mx-auto mt-6 max-w-3xl text-sm tracking-tight text-slate-100 md:text-xl">
+        <p className="mx-auto mt-2 max-w-2xl text-sm tracking-tight text-slate-100 md:text-xl">
           Ubicados en Palma de Mallorca ofrecemos servicios en todo el
           territorio nacional
         </p>
