@@ -12,7 +12,7 @@ export function Hero() {
       >
         <div className="absolute inset-0">
           <Image
-            className="h-full w-full object-cover opacity-30"
+            className="h-full w-full object-cover opacity-40"
             src={BackgroundImage}
             alt=""
           />
