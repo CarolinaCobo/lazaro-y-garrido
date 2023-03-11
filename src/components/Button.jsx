@@ -11,7 +11,7 @@ const baseStyles = {
 const variantStyles = {
   solid: {
     slate:
-      'bg-slate-900 text-white hover:bg-mallorca-200 hover:text-slate-100 active:bg-slate-800 active:text-slate-300 focus-visible:outline-slate-900',
+      'bg-slate-900 text-white hover:bg-mallorca-200 hover:text-slate-100 active:bg-slate-800 active:text-slate-300 focus-visible:outline-slate-900 ',
     mallorca:
       'bg-mallorca-600 text-white hover:text-slate-100 hover:bg-mallorca-500 active:bg-mallorca-800 active:text-slate-100 focus-visible:outline-mallorca-600',
     white:

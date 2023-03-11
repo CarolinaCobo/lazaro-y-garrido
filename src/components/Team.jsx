@@ -31,8 +31,8 @@ export const people = [
     imageUrl: Monica,
     bio: 'Diplomada en Magisterio por la Universidad de las Islas Baleares. Ejerce como como Asesora y comercial Inmobiliaria y dirige en el departamento inmobiliario del despacho.  Cuenta con una dilatada experiencia con más de 20 años en el sector comercial.     ',
     email: 'monica@lazarogarrido.com',
-    phone: '',
-    whatsapp: '',
+    phone: '626086219',
+    whatsapp: '+34626086219',
   },
 ]
 

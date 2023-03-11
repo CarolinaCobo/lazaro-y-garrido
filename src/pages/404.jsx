@@ -3,21 +3,6 @@ import Link from 'next/link'
 
 export default function Custom404() {
   return (
-    // <div className="relative pt-24">
-    //   <div className="text-center ">
-    //     <Image src="/logo.png" width={200} height={300} />
-    //     <h1 className="mt-8">
-    //       404 - La pagina no ha sido encontrada,{' '}
-    //       <Link
-    //         className="font-bold text-mallorca-600 hover:text-mallorca-100"
-    //         href="/"
-    //       >
-    //         volver
-    //       </Link>{' '}
-    //       a la página de inicio
-    //     </h1>
-    //   </div>
-    // </div>
     <div className="flex min-h-full flex-col bg-white pt-16 pb-12">
       <main className="mx-auto flex w-full max-w-7xl flex-grow flex-col justify-center px-6 lg:px-8">
         <div className="flex flex-shrink-0 justify-center">
