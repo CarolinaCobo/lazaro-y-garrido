@@ -16,7 +16,6 @@ export default function Home() {
           name="description"
           content="Abogados en Palma de Mallorca. No defendemos casos, defendemos personas."
         />
-
         <meta
           key="og:title"
           property="og:title"
@@ -34,6 +33,47 @@ export default function Home() {
           content="No defendemos casos, defendemos personas."
         />
         <meta property="og:url" content="http://www.lazarogarrido.com/" />
+
+        <meta
+          itemprop="name"
+          content="Lázaro & Garrido - Abogados en Palma de Mallorca"
+        />
+        <meta
+          itemprop="description"
+          content="No defendemos casos, defendemos personas."
+        />
+        <meta
+          itemprop="image"
+          content="https://lazaro-y-garrido.vercel.app/ogimage.png"
+        />
+        <meta property="og:url" content="https://lazaro-y-garrido.vercel.app" />
+        <meta property="og:type" content="website" />
+        <meta
+          property="og:title"
+          content="Lázaro & Garrido - Abogados en Palma de Mallorca"
+        />
+        <meta
+          property="og:description"
+          content="No defendemos casos, defendemos personas."
+        />
+        <meta
+          property="og:image"
+          content="https://lazaro-y-garrido.vercel.app/ogimage.png"
+        />
+
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta
+          name="twitter:title"
+          content="Lázaro & Garrido - Abogados en Palma de Mallorca"
+        />
+        <meta
+          name="twitter:description"
+          content="No defendemos casos, defendemos personas."
+        />
+        <meta
+          name="twitter:image"
+          content="https://lazaro-y-garrido.vercel.app/ogimage.png"
+        />
       </Head>
       <Header />
       <main>
