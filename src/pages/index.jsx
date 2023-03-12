@@ -7,8 +7,6 @@ import { Hero } from '@/components/Hero'
 import { Team } from '@/components/Team'
 import { Services } from '@/components/Services'
 
-import Newimage from './ogimage.png'
-
 export default function Home() {
   return (
     <>
@@ -24,7 +22,7 @@ export default function Home() {
           property="og:title"
           content="Lázaro & Garrido - Abogados en Palma de Mallorca"
         />
-        <meta property="og:image" content={Newimage} key="og:image" />
+        <meta property="og:image" content="ogimage.png" key="og:image" />
         <meta
           key="og:description"
           property="og:description"
