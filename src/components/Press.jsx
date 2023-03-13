@@ -68,9 +68,6 @@ export function Press() {
           >
             Prensa
           </h2>
-          <p className="mt-4 text-lg tracking-tight text-slate-700">
-            Nuestro despacho ha aparecido en prensa en múltiples ocasiones
-          </p>
         </div>
         <ul
           role="list"

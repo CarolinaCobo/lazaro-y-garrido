@@ -29,7 +29,7 @@ export const people = [
     name: 'MÓNICA HERNÁNDEZ',
     role: 'Agente Inmobiliario',
     imageUrl: Monica,
-    bio: 'Diplomada en Magisterio por la Universidad de las Islas Baleares. Ejerce como como Asesora y comercial Inmobiliaria y dirige en el departamento inmobiliario del despacho.  Cuenta con una dilatada experiencia con más de 20 años en el sector comercial.     ',
+    bio: 'Diplomada en Magisterio por la Universidad de las Islas Baleares. Ejerce como Asesora y comercial Inmobiliaria. Cuenta con una dilatada experiencia con más de 20 años en el sector comercial.',
     email: 'monica@lazarogarrido.com',
     phone: '626086219',
     whatsapp: '+34626086219',
@@ -48,9 +48,6 @@ export function Team() {
           <h2 className="font-display text-3xl tracking-tight text-slate-900 sm:text-4xl">
             Nuestro equipo
           </h2>
-          <p className="mt-4 text-lg tracking-tight text-slate-700">
-            Contamos con una basta experiencia en el ambito legal e inmobiliario
-          </p>
         </div>
 
         <ul

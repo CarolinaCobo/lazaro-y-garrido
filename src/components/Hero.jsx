@@ -39,7 +39,7 @@ export function Hero() {
           procedimientos de orden civil, penal, laboral y administrativo.
         </p>
         <p className="mx-auto mt-2 max-w-2xl text-sm tracking-tight text-slate-100 md:text-xl">
-          Ubicados en Palma de Mallorca ofrecemos servicios en todo el
+          Despacho con sede en Palma de Mallorca. Ofrecemos servicios en todo el
           territorio nacional
         </p>
         <div className="mt-10 flex justify-center gap-x-6 ">

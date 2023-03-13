@@ -8,13 +8,13 @@ const servicesList = [
   {
     title: 'Civil',
     description:
-      'En Lázaro & Garrido abogados prestamos servicios en procesos: matrimoniales; obligaciones y contratos; responsabilidad civil por culpa contractual y extracontractual, accidentes de tráfico, consumidores y usuarios, sucesiones y herencias etc.    ',
+      'En Lázaro & Garrido abogados prestamos servicios en procesos matrimoniales obligaciones y contratos, responsabilidad civil por culpa contractual y extracontractual, accidentes de tráfico, consumidores y usuarios, sucesiones y herencias.    ',
     image: '',
   },
   {
     title: 'Penal',
     description:
-      'Ejercemos la acusación particular o defensa en todo tipo de procesos penales derivados de la comisión de delitos de cualquier naturaleza. ',
+      'Ejercemos la acusación particular o defensa en todo tipo de procesos penales derivados de la comisión de delitos de cualquier naturaleza.',
     image: '',
   },
   {
