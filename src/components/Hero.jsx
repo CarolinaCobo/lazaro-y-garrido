@@ -40,7 +40,7 @@ export function Hero() {
         </p>
         <p className="mx-auto mt-2 max-w-2xl text-sm tracking-tight text-slate-100 md:text-xl">
           Despacho con sede en Palma de Mallorca. Ofrecemos servicios en todo el
-          territorio nacional
+          territorio nacional.
         </p>
         <div className="mt-10 flex justify-center gap-x-6 ">
           <Button
