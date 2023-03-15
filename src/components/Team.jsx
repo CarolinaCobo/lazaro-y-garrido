@@ -27,9 +27,9 @@ export const people = [
   },
   {
     name: 'MÓNICA HERNÁNDEZ',
-    role: 'Agente Inmobiliario',
+    role: 'Agente Inmobiliaria',
     imageUrl: Monica,
-    bio: 'Diplomada en Magisterio por la Universidad de las Islas Baleares. Ejerce como Asesora y comercial Inmobiliaria. Cuenta con una dilatada experiencia de más de 20 años en el sector comercial.',
+    bio: 'Diplomada en Magisterio por la Universidad de las Islas Baleares. Ejerce como Asesora Comercial Inmobiliaria. Cuenta con una dilatada experiencia de más de 20 años en el sector comercial.',
     email: 'monica@lazarogarrido.com',
     phone: '626086219',
     whatsapp: '+34626086219',
