@@ -11,8 +11,8 @@ export function Footer() {
           <Logo className="mx-auto h-10 w-auto" />
           <nav className="mt-10 text-sm" aria-label="quick links">
             <div className="-mx-2 -my-2 flex flex-wrap justify-center">
-              <NavLink href="#servicios">Servicios</NavLink>
-              <NavLink href="#nuestro-equipo">Nuestro equipo</NavLink>
+              <NavLink href="/#servicios">Servicios</NavLink>
+              <NavLink href="/#nuestro-equipo">Nuestro equipo</NavLink>
               <NavLink
                 href="https://www.lginmobiliaria.es/"
                 target="_blank"
@@ -20,7 +20,7 @@ export function Footer() {
               >
                 Inmobiliaria
               </NavLink>
-              <NavLink href="#prensa">Prensa</NavLink>
+              <NavLink href="/#prensa">Prensa</NavLink>
               <NavLink href="/contacto">Contacto</NavLink>
             </div>
           </nav>
