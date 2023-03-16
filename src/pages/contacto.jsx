@@ -31,7 +31,6 @@ export default function Contact() {
         <meta property="og:url" content="http://www.lazarogarrido.com/" />
       </Head>
       <Header />
-      <Header />
       <ContactPage />
       <Footer />
     </>
