@@ -29,8 +29,8 @@ export function ContactForm() {
   }
 
   return (
-    <>
-      <h2 className="text-3xl font-bold tracking-tight text-gray-900">
+    <div className="">
+      <h2 className="py-8 text-center text-3xl font-bold tracking-tight text-gray-900">
         Contacta directamente con nuestro equipo{' '}
       </h2>
       <ul
@@ -118,7 +118,7 @@ export function ContactForm() {
         </Link>
       </p>
 
-      <h2 className=" mt-20 text-3xl font-bold tracking-tight text-gray-900">
+      <h2 className=" mt-20 text-center text-3xl font-bold tracking-tight text-gray-900">
         Formulario de contacto{' '}
       </h2>
 
@@ -229,6 +229,6 @@ export function ContactForm() {
           <Modal open={open} setOpen={setOpen} />
         </div>
       </form>
-    </>
+    </div>
   )
 }

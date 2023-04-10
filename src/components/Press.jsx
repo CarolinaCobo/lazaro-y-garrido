@@ -77,17 +77,17 @@ export function Press() {
       className="relative overflow-hidden bg-slate-50 py-20 sm:py-32"
     >
       <Container className="relative">
-        <div className="mx-auto max-w-2xl lg:mx-0">
+        <div className="mx-auto max-w-lg text-center">
           <h2
             id="press-title"
-            className="font-display text-3xl tracking-tight text-slate-900 sm:text-4xl"
+            className="text-center font-display text-3xl tracking-tight text-slate-900 sm:text-4xl"
           >
             Prensa
           </h2>
         </div>
         <ul
           role="list"
-          className="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-8 lg:max-w-none lg:grid-cols-3"
+          className="mx-auto mt-16 grid max-w-2xl grid-cols-2 gap-8 lg:max-w-none lg:grid-cols-4"
         >
           {pressData.map((column, columnIndex) => (
             <li key={columnIndex}>
@@ -102,7 +102,7 @@ export function Press() {
                       <h3 className="font-display text-lg leading-7 text-mallorca-600 hover:text-mallorca-100 hover:underline hover:underline-offset-2">
                         {press.headLine}
                       </h3>
-                      <p className="mt-4 text-sm text-slate-700">
+                      <p className="mt-2 text-sm text-slate-700">
                         {press.description}
                       </p>
                     </Link>

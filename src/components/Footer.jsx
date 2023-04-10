@@ -5,26 +5,52 @@ import { NavLink } from '@/components/NavLink'
 
 export function Footer() {
   return (
-    <footer className="bg-slate-50">
+    <footer>
       <Container>
-        <div className="py-16">
-          <Logo className="mx-auto h-10 w-auto" />
-          <nav className="mt-10 text-sm" aria-label="quick links">
-            <div className="-mx-2 -my-2 flex flex-wrap justify-center">
-              <NavLink href="/#servicios">Servicios</NavLink>
-              <NavLink href="/#nuestro-equipo">Nuestro equipo</NavLink>
-              <NavLink
+        <nav className="mt-10 text-sm" aria-label="quick links">
+          <div className="mx-auto mt-6 flex-col items-center justify-between py-10 sm:flex sm:flex-row">
+            <div className="mb-6 sm:mb-0">
+              <Link href="/" aria-label="Home">
+                <Logo className="mx-auto flex h-10 w-auto" />
+              </Link>
+            </div>
+            <div>
+              <Link
+                className="inline-block rounded-full py-1 px-2 text-sm text-slate-700 hover:text-mallorca-200"
+                href="/#servicios"
+              >
+                Servicios
+              </Link>
+              <Link
+                className="inline-block rounded-full py-1 px-2 text-sm text-slate-700 hover:text-mallorca-200"
+                href="/#nuestro-equipo"
+              >
+                Nuestro equipo
+              </Link>
+              <Link
+                className="inline-block rounded-full py-1 px-2 text-sm text-slate-700 hover:text-mallorca-200"
                 href="https://www.lginmobiliaria.es/"
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 Inmobiliaria
-              </NavLink>
-              <NavLink href="/#prensa">Prensa</NavLink>
-              <NavLink href="/contacto">Contacto</NavLink>
+              </Link>
+              <Link
+                className="inline-block rounded-full py-1 px-2 text-sm text-slate-700 hover:text-mallorca-200"
+                href="/#prensa"
+              >
+                Prensa
+              </Link>
+              <Link
+                className="inline-block rounded-full py-1 px-2 text-sm text-slate-700 hover:text-mallorca-200"
+                href="/contacto"
+              >
+                Contacto
+              </Link>
             </div>
-          </nav>
-        </div>
+          </div>
+        </nav>
+
         <div className="flex flex-col items-center border-t border-slate-400/10 py-10 sm:flex-row-reverse sm:justify-between">
           <div className="flex gap-x-6">
             <Link
