@@ -6,6 +6,22 @@ const pressData = [
   [
     {
       headLine:
+        'Una juez declara nulo el despido de una madre con jornada reducida',
+      description:
+        'La empresa intentaba justificar la medida en que era la empleada con menos antigüedad',
+      href: 'https://www.ultimahora.es/noticias/local/2023/04/08/1912601/despido-baleares-declarado-nulo-madre-jornada-reducida.html',
+    },
+    {
+      headLine:
+        'Condenado un hotel tras un despedir a una trabajadora por colar a su perro en una habitación',
+      description:
+        'El tribunal ha estimado un recurso de la trabajadora, de manera que ha anulado el despido disciplinario.',
+      href: 'https://www.diariodemallorca.es/sucesos/sucesos-mallorca/2022/12/10/condenado-hotel-despedir-trabajadora-colar-79803880.html?utm_source=whatsapp&utm_medium=social&utm_campaign=btn-share',
+    },
+  ],
+  [
+    {
+      headLine:
         'Condena a un hotel de Mallorca tras un despido por colar a su perro en una habitación',
       description:
         'La trabajadora se alojó con el animal en una de las villas de lujo de la empresa, que prohíbe acceder con mascotas a sus clientes.',
