@@ -8,7 +8,7 @@ export function Footer() {
     <footer>
       <Container>
         <nav className="mt-10 text-sm" aria-label="quick links">
-          <div className="mx-auto mt-6 flex-col items-center justify-between py-10 sm:flex sm:flex-row">
+          <div className="mx-auto mt-6 flex-col items-center justify-between py-4 sm:mt-0 sm:flex sm:flex-row">
             <div className="mb-6 sm:mb-0">
               <Link href="/" aria-label="Home">
                 <Logo className="mx-auto flex h-10 w-auto" />
@@ -51,7 +51,7 @@ export function Footer() {
           </div>
         </nav>
 
-        <div className="flex flex-col items-center border-t border-slate-400/10 py-10 sm:flex-row-reverse sm:justify-between">
+        <div className="flex flex-col items-center border-slate-400/10 py-10 sm:flex-row-reverse sm:justify-between">
           <div className="flex gap-x-6">
             <Link
               href="https://es-la.facebook.com/people/L%C3%A1zaro-Garrido-Abogados/100053003869079/"
