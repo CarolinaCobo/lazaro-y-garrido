@@ -6,18 +6,17 @@ const pressData = [
   [
     {
       headLine:
+        'Dos años de prisión por agredir con un bate de béisbol a su vecino en Son Ferrer',
+      description:
+        'No fue una discusión más entre vecinos. De la amenaza se pasó a la agresión. Y no una cualquiera.',
+      href: 'https://www.ultimahora.es/noticias/local/2022/12/10/1843939/hoteles-despido-por-meter-perro-habitacion.html',
+    },
+    {
+      headLine:
         'Condena a un hotel de Mallorca tras un despido por colar a su perro en una habitación',
       description:
         'La trabajadora se alojó con el animal en una de las villas de lujo de la empresa, que prohíbe acceder con mascotas a sus clientes.',
-      href: 'https://www.ultimahora.es/noticias/local/2022/12/10/1843939/hoteles-despido-por-meter-perro-habitacion.html',
-    },
-
-    {
-      headLine:
-        'Imputan a una mujer por liarse a palos con unos inquilinos y coaccionar a una familia con una empresa de desokupación',
-      description:
-        'Según denuncia el afectado, cuando la propietaria se enteró de que el hombre había vuelto a acceder a la vivienda, la mujer acudió al edificio en el que creía que vivía él, con la intención de agredirle, pero se equivocó de piso y pegó a dos personas que no tenían nada que ver.',
-      href: 'https://www.eldiario.es/illes-balears/sociedad/imputan-mujer-liarse-palos-inquilinos-coaccionar-familia-empresa-desokupacion_1_9677988.html',
+      href: 'https://www.ultimahora.es/sucesos/ultimas/2021/02/09/1236961/dos-anos-prision-por-agredir-bate-beisbol-vecino-son-ferrer.html',
     },
   ],
   [
@@ -59,6 +58,13 @@ const pressData = [
       description:
         'La empresa intentaba justificar la medida en que era la empleada con menos antigüedad',
       href: 'https://www.ultimahora.es/noticias/local/2023/04/08/1912601/despido-baleares-declarado-nulo-madre-jornada-reducida.html',
+    },
+    {
+      headLine:
+        'Imputan a una mujer por liarse a palos con unos inquilinos y coaccionar a una familia con una empresa de desokupación',
+      description:
+        'Según denuncia el afectado, cuando la propietaria se enteró de que el hombre había vuelto a acceder a la vivienda, la mujer acudió al edificio en el que creía que vivía él, con la intención de agredirle, pero se equivocó de piso y pegó a dos personas que no tenían nada que ver.',
+      href: 'https://www.eldiario.es/illes-balears/sociedad/imputan-mujer-liarse-palos-inquilinos-coaccionar-familia-empresa-desokupacion_1_9677988.html',
     },
   ],
 ]
