@@ -92,7 +92,7 @@ function MobileNavigation() {
         >
           <Popover.Panel
             as="div"
-            className="ring-mallorca--900/5 absolute inset-x-0 top-full mt-4 flex origin-top flex-col rounded-2xl bg-white p-4 text-lg tracking-tight text-slate-900 shadow-xl ring-1"
+            className="ring-mallorca--900/5 absolute inset-x-0 top-full mt-4 flex origin-top flex-col rounded-2xl bg-white p-4 text-base tracking-tight text-slate-900 shadow-xl ring-1 sm:text-lg"
           >
             <MobileNavLink href="/#servicios">Servicios</MobileNavLink>
             <MobileNavLink href="/#nuestro-equipo">

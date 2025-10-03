@@ -51,11 +51,11 @@ export function Team() {
     <section
       id="nuestro-equipo"
       aria-label="team"
-      className="bg-slate-50 py-20 sm:py-32"
+      className="bg-white py-12 sm:py-6"
     >
       <Container>
         <div className="mx-auto max-w-2xl md:text-center">
-          <h2 className="font-display text-3xl tracking-tight text-slate-900 sm:text-4xl">
+          <h2 className="font-display text-2xl tracking-tight text-slate-900 sm:text-3xl md:text-4xl">
             Nuestro equipo
           </h2>
         </div>
@@ -76,16 +76,16 @@ export function Team() {
                 />
                 <div className="sm:col-span-2">
                   <div className="space-y-2">
-                    <div className="space-y-1 text-lg font-medium leading-6">
+                    <div className="space-y-1 text-lg font-medium leading-6 sm:text-xl">
                       <h3>{person.name}</h3>
                       <p className="text-mallorca-600">{person.role}</p>
                     </div>
-                    <div className="text-md">
-                      <p className="text-gray-500">{person.bio}</p>
+                    <div className="text-base">
+                      <p className="text-gray-500 sm:text-lg">{person.bio}</p>
                     </div>
                   </div>
                   <div>
-                    <dl className="mt-2 text-base text-gray-500">
+                    <dl className="mt-2 text-sm text-gray-500 sm:text-base">
                       <div className="mb-1 flex">
                         <Link
                           href={`mailto:${person.email}`}

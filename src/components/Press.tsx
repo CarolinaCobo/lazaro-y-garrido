@@ -80,13 +80,13 @@ export function Press() {
     <section
       id="prensa"
       aria-labelledby="press-title"
-      className="relative overflow-hidden bg-slate-50 py-20 sm:py-32"
+      className="relative overflow-hidden bg-white py-12 lg:py-16"
     >
       <Container className="relative">
         <div className="mx-auto max-w-lg text-center">
           <h2
             id="press-title"
-            className="text-center font-display text-3xl tracking-tight text-slate-900 sm:text-4xl"
+            className="text-center font-display text-2xl tracking-tight text-slate-900 sm:text-3xl md:text-4xl"
           >
             Prensa
           </h2>
@@ -105,10 +105,10 @@ export function Press() {
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      <h3 className="font-display text-lg leading-7 text-mallorca-600 hover:text-mallorca-100 hover:underline hover:underline-offset-2">
+                      <h3 className="font-display text-base leading-7 text-mallorca-600 hover:text-mallorca-100 hover:underline hover:underline-offset-2 sm:text-lg">
                         {press.headLine}
                       </h3>
-                      <p className="mt-2 text-sm text-slate-700">
+                      <p className="mt-2 text-sm text-slate-700 sm:text-base">
                         {press.description}
                       </p>
                     </Link>

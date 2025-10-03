@@ -7,7 +7,7 @@ export function Footer() {
   return (
     <footer>
       <Container>
-        <nav className="mt-10 text-sm" aria-label="quick links">
+        <nav className="mt-10 text-sm sm:text-base" aria-label="quick links">
           <div className="mx-auto mt-6 flex-col items-center justify-between py-4 sm:mt-0 sm:flex sm:flex-row">
             <div className="mb-6 sm:mb-0">
               <Link href="/" aria-label="Home">
@@ -16,19 +16,19 @@ export function Footer() {
             </div>
             <div>
               <Link
-                className="inline-block rounded-full py-1 px-2 text-sm text-slate-700 hover:text-mallorca-200"
+                className="inline-block rounded-full py-1 px-2 text-sm text-slate-700 hover:text-mallorca-200 sm:text-base"
                 href="/#servicios"
               >
                 Servicios
               </Link>
               <Link
-                className="inline-block rounded-full py-1 px-2 text-sm text-slate-700 hover:text-mallorca-200"
+                className="inline-block rounded-full py-1 px-2 text-sm text-slate-700 hover:text-mallorca-200 sm:text-base"
                 href="/#nuestro-equipo"
               >
                 Nuestro equipo
               </Link>
               <Link
-                className="inline-block rounded-full py-1 px-2 text-sm text-slate-700 hover:text-mallorca-200"
+                className="inline-block rounded-full py-1 px-2 text-sm text-slate-700 hover:text-mallorca-200 sm:text-base"
                 href="https://www.lginmobiliaria.es/"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -36,13 +36,13 @@ export function Footer() {
                 Inmobiliaria
               </Link>
               <Link
-                className="inline-block rounded-full py-1 px-2 text-sm text-slate-700 hover:text-mallorca-200"
+                className="inline-block rounded-full py-1 px-2 text-sm text-slate-700 hover:text-mallorca-200 sm:text-base"
                 href="/#prensa"
               >
                 Prensa
               </Link>
               <Link
-                className="inline-block rounded-full py-1 px-2 text-sm text-slate-700 hover:text-mallorca-200"
+                className="inline-block rounded-full py-1 px-2 text-sm text-slate-700 hover:text-mallorca-200 sm:text-base"
                 href="/contacto"
               >
                 Contacto
@@ -72,7 +72,7 @@ export function Footer() {
               </svg>
             </Link>
           </div>
-          <p className="mt-6 text-sm text-slate-500 sm:mt-0">
+          <p className="mt-6 text-sm text-slate-500 sm:mt-0 sm:text-base">
             &copy; {new Date().getFullYear()} Lázaro & Garrido
           </p>
         </div>

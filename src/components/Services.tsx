@@ -3,132 +3,92 @@ import { Tab } from '@headlessui/react'
 import clsx from 'clsx'
 
 import { Container } from '@/components/Container'
+import {
+  DocumentTextIcon,
+  LockClosedIcon,
+  UsersIcon,
+  BuildingOfficeIcon,
+  HomeIcon,
+} from '@heroicons/react/24/outline'
 
 interface Service {
   title: string
   description: string
-  image: string
+  icon: React.ComponentType<{ className?: string }>
 }
 
 const servicesList: Service[] = [
   {
     title: 'Civil',
     description:
-      'En Lázaro & Garrido abogados prestamos servicios en procesos matrimoniales obligaciones y contratos, responsabilidad civil por culpa contractual y extracontractual, accidentes de tráfico, consumidores y usuarios, herencias y sucesiones.',
-    image: '',
+      'Prestamos servicios en procesos matrimoniales obligaciones y contratos, responsabilidad civil por culpa contractual y extracontractual, accidentes de tráfico, consumidores y usuarios, herencias y sucesiones.',
+    icon: DocumentTextIcon,
   },
   {
     title: 'Penal',
     description:
       'Ejercemos la acusación particular o defensa en todo tipo de procesos penales derivados de la comisión de delitos de cualquier naturaleza.',
-    image: '',
+    icon: LockClosedIcon,
   },
   {
     title: 'Laboral',
     description:
       'Ejercemos la representación de la parte actora o demandada en procesos de despido, sanciones, derechos fundamentales, seguridad social, reclamaciones de cantidades. ',
-    image: '',
+    icon: UsersIcon,
   },
   {
     title: 'Administrativo',
     description:
       'Realizamos la representación de los interesados en procedimientos sancionadores, responsabilidad patrimonial de las Administraciones Públicas, urbanístico etc.',
-    image: '',
+    icon: BuildingOfficeIcon,
+  },
+  {
+    title: 'Inmobiliario',
+    description:
+      'Asesoramiento inmobiliario profesional, realizacion de edificios, compraventa de solares y propiedades.',
+    icon: HomeIcon,
   },
 ]
 
 export function Services() {
-  let [tabOrientation, setTabOrientation] = useState<'horizontal' | 'vertical'>('horizontal')
-
-  useEffect(() => {
-    let lgMediaQuery = window.matchMedia('(min-width: 1024px)')
-
-    function onMediaQueryChange({ matches }: { matches: boolean }) {
-      setTabOrientation(matches ? 'vertical' : 'horizontal')
-    }
-
-    onMediaQueryChange(lgMediaQuery)
-    lgMediaQuery.addEventListener('change', onMediaQueryChange)
-
-    return () => {
-      lgMediaQuery.removeEventListener('change', onMediaQueryChange)
-    }
-  }, [])
+  const LegalServices = () => {
+    return (
+      <div className="bg-white pb-6 sm:pb-4">
+        <div className="mx-auto mt-8 max-w-7xl px-6 sm:mt-16 md:mt-20 lg:mt-24 lg:px-8">
+          <dl className="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-8 md:grid-cols-2 md:gap-y-16 lg:max-w-none lg:grid-cols-3 lg:gap-y-24">
+            {servicesList.map((feature) => (
+              <div key={feature.title} className="relative">
+                <dt className="text-lg font-semibold text-mallorca-900 sm:text-xl">
+                  <div className="size-10 absolute top-0 left-0 flex items-center justify-center rounded-lg ">
+                    <feature.icon className="h-6 w-6 text-mallorca-600" />
+                  </div>
+                  <div className="ml-8">{feature.title}</div>
+                </dt>
+                <dd className="mt-4 text-sm text-mallorca-900 sm:text-base">
+                  {feature.description}
+                </dd>
+              </div>
+            ))}
+          </dl>
+        </div>
+      </div>
+    )
+  }
 
   return (
     <section
       id="servicios"
       aria-label="Servicios ofrecidos por el despacho"
-      className="relative overflow-hidden bg-mallorca-900 pt-20 pb-28 sm:py-32"
+      className="relative overflow-hidden bg-white sm:py-10"
     >
       <Container className="relative">
         <div className="max-w-2xl md:mx-auto md:text-center xl:max-w-none">
-          <h2 className="bg-mallorca-900 font-display text-3xl tracking-tight text-white sm:text-4xl md:text-5xl">
-            No defendemos casos, defendemos personas.
+          <h2 className="py-4 font-display text-2xl tracking-tight text-mallorca-900 sm:text-3xl md:text-4xl lg:text-5xl">
+            No defendemos casos,{' '}
+            <span className="italic">defendemos personas.</span>
           </h2>
-          <p className="mt-6 text-lg tracking-tight text-blue-100"></p>
         </div>
-        <Tab.Group
-          as="div"
-          className="mt-16 grid grid-cols-1 items-center gap-y-2 pt-10 sm:gap-y-6 "
-          vertical={tabOrientation === 'vertical'}
-        >
-          {({ selectedIndex }: { selectedIndex: number }) => (
-            <>
-              <div className="-mx-4 flex overflow-x-auto pb-4 sm:mx-0 sm:overflow-visible sm:pb-0 lg:col-span-5">
-                <Tab.List className="relative z-10 flex gap-x-4 whitespace-nowrap px-4 sm:mx-auto sm:px-0 lg:mx-0 lg:block lg:gap-x-0 lg:gap-y-1 lg:whitespace-normal">
-                  {servicesList.map((service, serviceIndex) => (
-                    <div
-                      key={service.title}
-                      className={clsx(
-                        'group relative rounded-full py-1 px-4 lg:rounded-xl lg:p-6',
-                        selectedIndex === serviceIndex
-                          ? 'bg-white lg:bg-white/10 lg:ring-1 lg:ring-inset lg:ring-white/10'
-                          : 'hover:bg-white/10 lg:hover:bg-white/5'
-                      )}
-                    >
-                      <h3>
-                        <Tab
-                          className={clsx(
-                            'font-display text-lg [&:not(:focus-visible)]:focus:outline-none',
-                            selectedIndex === serviceIndex
-                              ? 'text-mallorca-600 lg:text-white'
-                              : 'text-blue-100 hover:text-white lg:text-white'
-                          )}
-                        >
-                          <span className="absolute inset-0 rounded-full lg:rounded-r-none lg:rounded-l-xl" />
-                          {service.title}
-                        </Tab>
-                      </h3>
-                      <p
-                        className={clsx(
-                          'mt-2 hidden text-sm lg:block',
-                          selectedIndex === serviceIndex
-                            ? 'text-white'
-                            : 'text-blue-100 group-hover:text-white'
-                        )}
-                      >
-                        {service.description}
-                      </p>
-                    </div>
-                  ))}
-                </Tab.List>
-              </div>
-              <Tab.Panels className="">
-                {servicesList.map((service) => (
-                  <Tab.Panel key={service.title} unmount={false}>
-                    <div className="relative sm:px-6 lg:hidden">
-                      <div className="absolute -inset-x-4 top-[-6.5rem] bottom-[-4.25rem] bg-white/10 ring-1 ring-inset ring-white/10 sm:inset-x-0 sm:rounded-xl" />
-                      <p className="relative mx-auto max-w-2xl text-base text-white sm:text-center">
-                        {service.description}
-                      </p>
-                    </div>
-                  </Tab.Panel>
-                ))}
-              </Tab.Panels>
-            </>
-          )}
-        </Tab.Group>
+        <LegalServices />
       </Container>
     </section>
   )

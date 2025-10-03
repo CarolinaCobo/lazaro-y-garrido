@@ -4,9 +4,9 @@ import { ReactNode } from 'react'
 
 const baseStyles = {
   solid:
-    'group inline-flex items-center justify-center rounded-full py-2 px-4 text-sm font-semibold focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-2',
+    'group inline-flex items-center justify-center rounded-lg py-2 px-4 text-sm font-semibold focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-2',
   outline:
-    'group inline-flex ring-1 items-center justify-center rounded-full py-2 px-4 text-sm focus:outline-none',
+    'group inline-flex ring-1 items-center justify-center rounded-lg py-2 px-4 text-sm focus:outline-none',
 }
 
 const variantStyles: Record<string, Record<string, string>> = {
@@ -16,7 +16,7 @@ const variantStyles: Record<string, Record<string, string>> = {
     mallorca:
       'bg-mallorca-600 text-white hover:text-slate-100 hover:bg-mallorca-500 active:bg-mallorca-800 active:text-slate-100 focus-visible:outline-mallorca-600',
     white:
-      'bg-white text-slate-900 hover:bg-mallorca-50 active:bg-mallorca-200 active:text-slate-600 focus-visible:outline-white',
+      'bg-white text-slate-900 hover:bg-mallorca-50 active:bg-mallorca-200 active:text-slate-600 focus-visible:outline-white hover:text-white border-2 border-white',
   },
   outline: {
     slate:
@@ -34,6 +34,8 @@ interface ButtonProps {
   children: ReactNode
   type?: 'button' | 'submit' | 'reset'
   onClick?: () => void
+  target?: string
+  rel?: string
 }
 
 export function Button({
@@ -51,7 +53,12 @@ export function Button({
   )
 
   return href ? (
-    <Link href={href} className={className} {...props}>
+    <Link
+      href={href}
+      className={className}
+      target={props.target}
+      rel={props.rel}
+    >
       {children}
     </Link>
   ) : (
