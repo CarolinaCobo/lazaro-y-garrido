@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import clsx from 'clsx'
+import { ReactNode } from 'react'
 
 const baseStyles = {
   solid:
@@ -8,7 +9,7 @@ const baseStyles = {
     'group inline-flex ring-1 items-center justify-center rounded-full py-2 px-4 text-sm focus:outline-none',
 }
 
-const variantStyles = {
+const variantStyles: Record<string, Record<string, string>> = {
   solid: {
     slate:
       'bg-slate-900 text-white hover:bg-mallorca-200 hover:text-slate-100 active:bg-slate-800 active:text-slate-300 focus-visible:outline-slate-900 ',
@@ -25,13 +26,24 @@ const variantStyles = {
   },
 }
 
+interface ButtonProps {
+  variant?: 'solid' | 'outline'
+  color?: 'slate' | 'mallorca' | 'white'
+  className?: string
+  href?: string
+  children: ReactNode
+  type?: 'button' | 'submit' | 'reset'
+  onClick?: () => void
+}
+
 export function Button({
   variant = 'solid',
   color = 'slate',
   className,
   href,
+  children,
   ...props
-}) {
+}: ButtonProps) {
   className = clsx(
     baseStyles[variant],
     variantStyles[variant][color],
@@ -39,8 +51,12 @@ export function Button({
   )
 
   return href ? (
-    <Link href={href} className={className} {...props} />
+    <Link href={href} className={className} {...props}>
+      {children}
+    </Link>
   ) : (
-    <button className={className} {...props} />
+    <button className={className} {...props}>
+      {children}
+    </button>
   )
 }

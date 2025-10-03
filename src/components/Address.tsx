@@ -31,7 +31,7 @@ export function Address() {
             src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15675.304856498467!2d2.651404477143287!3d39.56998197884075!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xfe1bb27cbd3a8cba!2sL%C3%A1zaro%20%26%20Garrido%20Abogados!5e0!3m2!1sen!2sie!4v1671098634436!5m2!1sen!2sie"
             width="100%"
             height="100%"
-            allowFullScreen=""
+            allowFullScreen={true}
             loading="lazy"
             className="aspect-[4/3] w-full "
             referrerPolicy="no-referrer-when-downgrade"

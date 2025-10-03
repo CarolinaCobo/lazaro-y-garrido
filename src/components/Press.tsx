@@ -2,7 +2,13 @@ import Link from 'next/link'
 
 import { Container } from '@/components/Container'
 
-const pressData = [
+interface PressItem {
+  headLine: string
+  description: string
+  href: string
+}
+
+const pressData: PressItem[][] = [
   [
     {
       headLine:

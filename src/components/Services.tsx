@@ -4,7 +4,13 @@ import clsx from 'clsx'
 
 import { Container } from '@/components/Container'
 
-const servicesList = [
+interface Service {
+  title: string
+  description: string
+  image: string
+}
+
+const servicesList: Service[] = [
   {
     title: 'Civil',
     description:
@@ -32,12 +38,12 @@ const servicesList = [
 ]
 
 export function Services() {
-  let [tabOrientation, setTabOrientation] = useState('horizontal')
+  let [tabOrientation, setTabOrientation] = useState<'horizontal' | 'vertical'>('horizontal')
 
   useEffect(() => {
     let lgMediaQuery = window.matchMedia('(min-width: 1024px)')
 
-    function onMediaQueryChange({ matches }) {
+    function onMediaQueryChange({ matches }: { matches: boolean }) {
       setTabOrientation(matches ? 'vertical' : 'horizontal')
     }
 
@@ -67,7 +73,7 @@ export function Services() {
           className="mt-16 grid grid-cols-1 items-center gap-y-2 pt-10 sm:gap-y-6 "
           vertical={tabOrientation === 'vertical'}
         >
-          {({ selectedIndex }) => (
+          {({ selectedIndex }: { selectedIndex: number }) => (
             <>
               <div className="-mx-4 flex overflow-x-auto pb-4 sm:mx-0 sm:overflow-visible sm:pb-0 lg:col-span-5">
                 <Tab.List className="relative z-10 flex gap-x-4 whitespace-nowrap px-4 sm:mx-auto sm:px-0 lg:mx-0 lg:block lg:gap-x-0 lg:gap-y-1 lg:whitespace-normal">
@@ -117,20 +123,6 @@ export function Services() {
                         {service.description}
                       </p>
                     </div>
-                    {/* <div className="mt-10 w-[45rem] overflow-hidden rounded-xl bg-slate-50 shadow-xl shadow-blue-900/20 sm:w-auto lg:mt-0 lg:w-[67.8125rem]">
-                      <div className="relative sm:px-6 lg:hidden">
-                        <div className="absolute -inset-x-4 top-[-6.5rem] bottom-[-4.25rem] bg-white/10 ring-1 ring-inset ring-white/10 sm:inset-x-0 sm:rounded-t-xl" />
-                        <p className="relative mx-auto max-w-2xl text-base text-white sm:text-center">
-                          {service.description}
-                        </p>
-                      </div> */}
-                    {/* <Image
-                        className="w-full"
-                        src={service.image}
-                        alt=""
-                        priority
-                        sizes="(min-width: 1024px) 67.8125rem, (min-width: 640px) 100vw, 45rem"
-                      /> */}
                   </Tab.Panel>
                 ))}
               </Tab.Panels>
