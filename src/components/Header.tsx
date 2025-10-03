@@ -1,13 +1,20 @@
 import { Popover, Transition } from '@headlessui/react'
 import clsx from 'clsx'
 import Link from 'next/link'
-import { Fragment } from 'react'
+import { Fragment, ReactNode } from 'react'
 import { Button } from '@/components/Button'
 import { Container } from '@/components/Container'
 import { Logo } from '@/components/Logo'
 import { NavLink } from '@/components/NavLink'
 
-function MobileNavLink({ href, children, rel, target }) {
+interface MobileNavLinkProps {
+  href: string
+  children: ReactNode
+  rel?: string
+  target?: string
+}
+
+function MobileNavLink({ href, children, rel, target }: MobileNavLinkProps) {
   return (
     <Popover.Button
       as={Link}
@@ -21,7 +28,11 @@ function MobileNavLink({ href, children, rel, target }) {
   )
 }
 
-function MobileNavIcon({ open }) {
+interface MobileNavIconProps {
+  open: boolean
+}
+
+function MobileNavIcon({ open }: MobileNavIconProps) {
   return (
     <svg
       aria-hidden="true"
@@ -56,7 +67,7 @@ function MobileNavigation() {
         className="relative z-10 flex h-8 w-8 items-center justify-center [&:not(:focus-visible)]:focus:outline-none"
         aria-label="Toggle Navigation"
       >
-        {({ open }) => <MobileNavIcon open={open} />}
+        {({ open }: { open: boolean }) => <MobileNavIcon open={open} />}
       </Popover.Button>
       <Transition.Root>
         <Transition.Child

@@ -6,7 +6,17 @@ import Monica from 'src/images/avatars/Monica.jpeg'
 import { EnvelopeIcon, PhoneIcon } from '@heroicons/react/24/outline'
 import { Container } from '@/components/Container'
 
-export const people = [
+export interface Person {
+  name: string
+  role: string
+  imageUrl: any
+  bio: string
+  email: string
+  phone: string
+  whatsapp: string
+}
+
+export const people: Person[] = [
   {
     name: 'ANTONIO LÁZARO',
     role: 'Abogado',

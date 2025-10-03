@@ -8,7 +8,13 @@ export default function Custom404() {
         <div className="flex flex-shrink-0 justify-center">
           <Link href="/" className="inline-flex">
             <span className="sr-only">Your Company</span>
-            <img className="h-36 w-auto" src="/logo.png" alt="logo" />
+            <Image
+              className="h-36 w-auto"
+              src="/logo.png"
+              alt="logo"
+              width={144}
+              height={144}
+            />
           </Link>
         </div>
         <div className="py-16">

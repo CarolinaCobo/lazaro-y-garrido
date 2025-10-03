@@ -7,17 +7,24 @@ import { useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { Modal } from './Modal'
 
+interface FormData {
+  firstName: string
+  lastName: string
+  email: string
+  message: string
+}
+
 export function ContactForm() {
   const {
     register,
     handleSubmit,
     formState: { errors },
     reset,
-  } = useForm()
+  } = useForm<FormData>()
 
   const [open, setOpen] = useState(false)
 
-  const onSubmit = (data) => {
+  const onSubmit = (data: FormData) => {
     console.log(data)
     axios
       .post('https://eo7vnosi4j5466v.m.pipedream.net', data)

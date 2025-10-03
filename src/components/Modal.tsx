@@ -3,7 +3,12 @@ import { Dialog, Transition } from '@headlessui/react'
 import { CheckIcon } from '@heroicons/react/24/outline'
 import { Fragment } from 'react'
 
-export function Modal({ open, setOpen }) {
+interface ModalProps {
+  open: boolean
+  setOpen: (open: boolean) => void
+}
+
+export function Modal({ open, setOpen }: ModalProps) {
   return (
     <Transition.Root show={open} as={Fragment}>
       <Dialog as="div" className="relative z-10" onClose={setOpen}>
