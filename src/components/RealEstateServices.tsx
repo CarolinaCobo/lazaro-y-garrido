@@ -1,4 +1,5 @@
 import { Container } from '@/components/Container'
+import { RealStateContact } from './RealStateContact'
 
 const stats = [
   {
@@ -17,7 +18,7 @@ const stats = [
         />
       </svg>
     ),
-    number: '5+',
+    number: '20+',
     description: 'Años de experiencia',
   },
   {
@@ -62,51 +63,20 @@ const stats = [
 
 export function RealEstateServices() {
   return (
-    <section className="bg-white py-16">
+    <section className="bg-mallorca-600 py-8">
+      <RealStateContact />
       <Container>
-        <div className="space-y-12">
-          {/* Green Banner */}
-          <div className="relative overflow-hidden rounded-2xl bg-mallorca-200 p-8 md:p-12">
-            <div className="relative z-10">
-              {/* Main Content */}
-              <div className="max-w-3xl">
-                <h2 className="text-2xl font-bold text-white sm:text-3xl md:text-4xl lg:text-5xl">
-                  Tu próximo hogar comienza aquí
-                </h2>
-                <p className="mt-6 text-base text-white sm:text-lg md:text-xl">
-                  Quieres ser el primero en recibir nuevas propiedades?
-                </p>
-
-                <div className="mt-10 flex flex-row">
-                  <input
-                    type="text"
-                    placeholder="email"
-                    className="mr-2 w-full rounded-lg border-2 border-white bg-white px-3 py-2 text-base font-medium text-mallorca-600 transition-colors hover:bg-mallorca-200 hover:text-white focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
-                  />
-
-                  <a
-                    href="https://www.lginmobiliaria.es/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 rounded-lg border-2 border-white bg-white px-6 text-lg font-semibold text-mallorca-600 transition-colors hover:bg-mallorca-200 hover:text-white focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
-                  >
-                    Enviar <span className="text-lg">→</span>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-
+        <div className="mt-4">
           {/* Stats Cards */}
-          <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
+          <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
             {stats.map((stat, index) => (
-              <div key={index} className="rounded-xl bg-white p-8 shadow-lg">
+              <div key={index} className="rounded-xl bg-white p-4 shadow-lg">
                 <div className="flex flex-col items-center text-center">
                   <div className="mb-4">{stat.icon}</div>
-                  <div className="text-3xl font-bold text-navy-900 sm:text-4xl">
+                  <div className="text-lg font-bold text-navy-900 sm:text-xl">
                     {stat.number}
                   </div>
-                  <div className="mt-2 text-base text-navy-600 sm:text-lg">
+                  <div className="mt-2 text-sm text-navy-600 sm:text-base">
                     {stat.description}
                   </div>
                 </div>

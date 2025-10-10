@@ -51,18 +51,18 @@ export function Team() {
     <section
       id="nuestro-equipo"
       aria-label="team"
-      className="bg-white py-12 sm:py-6"
+      className="bg-white py-12 pt-8 sm:py-4"
     >
       <Container>
-        <div className="mx-auto max-w-2xl md:text-center">
-          <h2 className="font-display text-2xl tracking-tight text-navy-900 sm:text-3xl md:text-4xl">
+        <div className="mx-auto max-w-2xl pt-4 md:text-center">
+          <h2 className="font-display text-xl tracking-tight text-navy-900 sm:text-2xl md:text-3xl">
             Nuestro equipo
           </h2>
         </div>
 
         <ul
           role="list"
-          className="mt-16 space-y-12 lg:grid lg:grid-cols-2 lg:items-start lg:gap-x-8 lg:gap-y-12 lg:space-y-0 "
+          className="mt-12 space-y-12 lg:grid lg:grid-cols-2 lg:items-start lg:gap-x-8 lg:gap-y-12 lg:space-y-0 "
         >
           {people.map((person) => (
             <li key={person.name}>
@@ -76,16 +76,16 @@ export function Team() {
                 />
                 <div className="sm:col-span-2">
                   <div className="space-y-2">
-                    <div className="space-y-1 text-lg font-medium leading-6 sm:text-xl">
+                    <div className="space-y-1 text-base font-medium leading-6 sm:text-lg">
                       <h3>{person.name}</h3>
                       <p className="text-mallorca-600">{person.role}</p>
                     </div>
-                    <div className="text-base">
-                      <p className="text-navy-500 sm:text-lg">{person.bio}</p>
+                    <div className="text-sm">
+                      <p className="text-navy-500 sm:text-base">{person.bio}</p>
                     </div>
                   </div>
                   <div>
-                    <dl className="mt-2 text-sm text-navy-500 sm:text-base">
+                    <dl className="mt-2 text-xs text-navy-500 sm:text-sm">
                       <div className="mb-1 flex">
                         <Link
                           href={`mailto:${person.email}`}

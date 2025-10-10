@@ -86,7 +86,7 @@ export function Press() {
         <div className="mx-auto max-w-lg text-center">
           <h2
             id="press-title"
-            className="text-center font-display text-2xl tracking-tight text-navy-900 sm:text-3xl md:text-4xl"
+            className="text-center font-display text-xl tracking-tight text-navy-900 sm:text-2xl md:text-3xl"
           >
             Prensa
           </h2>
@@ -105,10 +105,10 @@ export function Press() {
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      <h3 className="font-display text-base leading-7 text-mallorca-600 hover:text-mallorca-100 hover:underline hover:underline-offset-2 sm:text-lg">
+                      <h3 className="font-display text-sm leading-7 text-mallorca-600 hover:text-mallorca-100 hover:underline hover:underline-offset-2 sm:text-base">
                         {press.headLine}
                       </h3>
-                      <p className="mt-2 text-sm text-navy-700 sm:text-base">
+                      <p className="mt-2 text-xs text-navy-700 sm:text-sm">
                         {press.description}
                       </p>
                     </Link>

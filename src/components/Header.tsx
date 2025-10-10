@@ -92,9 +92,9 @@ function MobileNavigation() {
         >
           <Popover.Panel
             as="div"
-            className="ring-mallorca--900/5 absolute inset-x-0 top-full mt-4 flex origin-top flex-col rounded-2xl bg-white p-4 text-base tracking-tight text-navy-900 shadow-xl ring-1 sm:text-lg"
+            className="ring-mallorca--900/5 absolute inset-x-0 top-full mt-4 flex origin-top flex-col rounded-2xl bg-white p-4 text-sm tracking-tight text-navy-900 shadow-xl ring-1 sm:text-base"
           >
-            <MobileNavLink href="/servicios">Servicios</MobileNavLink>
+            <MobileNavLink href="/#servicios">Servicios</MobileNavLink>
             <MobileNavLink href="https://www.lginmobiliaria.es/">
               Inmobiliaria
             </MobileNavLink>
@@ -119,7 +119,7 @@ export function Header() {
               <Logo className="h-10 w-auto" />
             </Link>
             <div className="hidden md:flex md:gap-x-6">
-              <NavLink href="/servicios">Servicios Legales</NavLink>
+              <NavLink href="/#servicios">Servicios Legales</NavLink>
               <NavLink href="https://www.lginmobiliaria.es/" target={'_blank'}>
                 Inmobiliaria
               </NavLink>

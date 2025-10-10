@@ -9,7 +9,7 @@ export function CallToAction() {
     >
       <Container className="relative">
         <div className="mx-auto max-w-lg text-center">
-          <h2 className="font-display text-2xl tracking-tight text-navy-900 sm:text-3xl md:text-4xl">
+          <h2 className="font-display text-xl tracking-tight text-navy-900 sm:text-2xl md:text-3xl">
             Para más información{' '}
           </h2>
           <Button href="/contacto" color="mallorca" className="mt-10">

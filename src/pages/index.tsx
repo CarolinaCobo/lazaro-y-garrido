@@ -7,6 +7,9 @@ import { Hero } from '@/components/Hero'
 import { Team } from '@/components/Team'
 import { Services } from '@/components/Services'
 import { RealEstateServices } from '@/components/RealEstateServices'
+import { ServicesCTA } from '@/components/ServicesCTA'
+import { ServicesGrid } from '@/components/ServicesGrid'
+import { ServicesHero } from '@/components/ServicesHero'
 
 export default function Home() {
   return (
@@ -38,11 +41,22 @@ export default function Home() {
       </Head>
       <Header />
       <main>
-        {/* <Hero /> */}
+        <Hero />
         <Services />
+        <ServicesHero id="servicios" title="Nuestros Servicios Legales">
+          {{
+            mainText: 'No defendemos casos,',
+            subText: <span className="italic">defendemos personas.</span>,
+          }}
+        </ServicesHero>
+        <ServicesGrid />
+
         <RealEstateServices />
+
         <Team />
-        <CallToAction />
+        <ServicesCTA />
+
+        {/* <CallToAction /> */}
         <Press />
       </main>
       <Footer />

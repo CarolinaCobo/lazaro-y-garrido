@@ -82,13 +82,13 @@ export function ContactForm() {
               <div className="mb-8 space-y-4 sm:grid sm:grid-cols-1 sm:gap-6 sm:space-y-0 lg:gap-8">
                 <div className="sm:col-span-2">
                   <div className="space-y-2">
-                    <div className="space-y-1 text-lg font-medium leading-6 sm:text-xl">
+                    <div className="space-y-1 text-base font-medium leading-6 sm:text-lg">
                       <h3>{person.name}</h3>
                       <p className="text-mallorca-600">{person.role}</p>
                     </div>
                   </div>
                   <div>
-                    <dl className="mt-2 text-sm text-navy-500 sm:text-base">
+                    <dl className="mt-2 text-xs text-navy-500 sm:text-sm">
                       <div className="mb-1 flex">
                         <Link
                           href={`mailto:${person.email}`}
@@ -151,7 +151,7 @@ export function ContactForm() {
             </li>
           ))}
         </ul>
-        <p className="mt-6 text-sm text-navy-500 sm:text-base">
+        <p className="mt-6 text-xs text-navy-500 sm:text-sm">
           Si no sabes con quien deberias contactar puedes escribirnos a{' '}
           <Link
             href="mailto:info@lazarogarrido.com"
@@ -161,7 +161,7 @@ export function ContactForm() {
           </Link>
         </p>
 
-        <h2 className="mt-12 text-center text-2xl font-bold tracking-tight text-navy-900 sm:text-3xl md:text-4xl">
+        <h2 className="mt-12 text-center text-xl font-bold tracking-tight text-navy-900 sm:text-2xl md:text-3xl">
           Formulario de contacto{' '}
         </h2>
 
@@ -176,7 +176,7 @@ export function ContactForm() {
                 <div className="col-span-6 sm:col-span-4">
                   <label
                     htmlFor="firstName"
-                    className="block text-sm font-medium text-navy-700 sm:text-base"
+                    className="block text-xs font-medium text-navy-700 sm:text-sm"
                   >
                     Nombre<span className="text-mallorca-500 ">*</span>
                   </label>
@@ -198,7 +198,7 @@ export function ContactForm() {
                 <div className="col-span-6 sm:col-span-4">
                   <label
                     htmlFor="lastName"
-                    className="block text-sm font-medium text-navy-700 sm:text-base"
+                    className="block text-xs font-medium text-navy-700 sm:text-sm"
                   >
                     Apellidos<span className="text-mallorca-500 ">*</span>
                   </label>
@@ -220,7 +220,7 @@ export function ContactForm() {
                 <div className="col-span-6 sm:col-span-4">
                   <label
                     htmlFor="email"
-                    className="block text-sm font-medium text-navy-700 sm:text-base"
+                    className="block text-xs font-medium text-navy-700 sm:text-sm"
                   >
                     Dirección de correo electrónico
                     <span className="text-mallorca-500 ">*</span>
@@ -243,7 +243,7 @@ export function ContactForm() {
                 <div className="col-span-6 sm:col-span-4">
                   <label
                     htmlFor="message"
-                    className="text-sm font-medium text-navy-700 sm:text-base"
+                    className="text-xs font-medium text-navy-700 sm:text-sm"
                   >
                     Mensaje<span className="text-mallorca-500 ">*</span>
                   </label>

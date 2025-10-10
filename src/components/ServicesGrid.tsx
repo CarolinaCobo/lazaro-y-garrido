@@ -5,6 +5,7 @@ import {
   UsersIcon,
   BuildingOfficeIcon,
   HomeIcon,
+  BriefcaseIcon,
 } from '@heroicons/react/24/outline'
 
 interface Service {
@@ -44,6 +45,12 @@ const servicesList: Service[] = [
       'Asesoramiento inmobiliario profesional, realizacion de edificios, compraventa de solares y propiedades.',
     icon: HomeIcon,
   },
+  {
+    title: 'Arrendamientos',
+    description:
+      'Asesoramiento y gestión legal de contratos de arrendamiento, desahucios, comunidades de propietarios, y resolución de conflictos entre arrendadores y arrendatarios.',
+    icon: BriefcaseIcon,
+  },
 ]
 
 export function ServicesGrid() {
@@ -58,15 +65,15 @@ export function ServicesGrid() {
             >
               <div className="mb-6 flex items-center">
                 <div className="flex-shrink-0">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-navy-100 transition-colors duration-300 group-hover:bg-navy-200">
-                    <service.icon className="h-6 w-6 text-navy-600" />
+                  <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-mallorca-50 transition-colors duration-300 group-hover:bg-mallorca-200">
+                    <service.icon className="h-6 w-6 text-white" />
                   </div>
                 </div>
-                <h3 className="ml-4 text-xl font-bold text-navy-800">
+                <h3 className="ml-4 text-lg font-bold text-navy-800">
                   {service.title}
                 </h3>
               </div>
-              <p className="leading-relaxed text-navy-600">
+              <p className="text-sm leading-relaxed text-navy-600">
                 {service.description}
               </p>
             </div>

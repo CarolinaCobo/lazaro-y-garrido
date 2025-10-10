@@ -46,12 +46,12 @@ export function Modal({ open, setOpen }: ModalProps) {
                   <div className="mt-3 text-center sm:mt-5">
                     <Dialog.Title
                       as="h3"
-                      className="text-lg font-medium leading-6 text-navy-900"
+                      className="text-base font-medium leading-6 text-navy-900"
                     >
                       Mensaje recibido
                     </Dialog.Title>
                     <div className="mt-2">
-                      <p className="text-sm text-navy-500">
+                      <p className="text-xs text-navy-500 sm:text-sm">
                         Nos pondremos en contacto contigo en la mayor brevedad
                         posible
                       </p>
