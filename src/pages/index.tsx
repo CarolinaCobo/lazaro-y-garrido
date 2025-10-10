@@ -38,7 +38,7 @@ export default function Home() {
       </Head>
       <Header />
       <main>
-        <Hero />
+        {/* <Hero /> */}
         <Services />
         <RealEstateServices />
         <Team />

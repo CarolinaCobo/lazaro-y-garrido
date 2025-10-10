@@ -36,7 +36,7 @@ function MobileNavIcon({ open }: MobileNavIconProps) {
   return (
     <svg
       aria-hidden="true"
-      className="h-3.5 w-3.5 overflow-visible stroke-slate-700"
+      className="h-3.5 w-3.5 overflow-visible stroke-navy-700"
       fill="none"
       strokeWidth={2}
       height="100%"
@@ -79,7 +79,7 @@ function MobileNavigation() {
           leaveFrom="opacity-100"
           leaveTo="opacity-0"
         >
-          <Popover.Overlay className="fixed inset-0 bg-slate-300/50" />
+          <Popover.Overlay className="fixed inset-0 bg-navy-300/50" />
         </Transition.Child>
         <Transition.Child
           as={Fragment}
@@ -92,14 +92,14 @@ function MobileNavigation() {
         >
           <Popover.Panel
             as="div"
-            className="ring-mallorca--900/5 absolute inset-x-0 top-full mt-4 flex origin-top flex-col rounded-2xl bg-white p-4 text-base tracking-tight text-slate-900 shadow-xl ring-1 sm:text-lg"
+            className="ring-mallorca--900/5 absolute inset-x-0 top-full mt-4 flex origin-top flex-col rounded-2xl bg-white p-4 text-base tracking-tight text-navy-900 shadow-xl ring-1 sm:text-lg"
           >
-            <MobileNavLink href="/#servicios">Servicios</MobileNavLink>
-            <MobileNavLink href="/#nuestro-equipo">
-              Nuestro Equipo
-            </MobileNavLink>
+            <MobileNavLink href="/servicios">Servicios</MobileNavLink>
             <MobileNavLink href="https://www.lginmobiliaria.es/">
               Inmobiliaria
+            </MobileNavLink>
+            <MobileNavLink href="/#nuestro-equipo">
+              Nuestro Equipo
             </MobileNavLink>
             <MobileNavLink href="/#prensa">Prensa</MobileNavLink>
           </Popover.Panel>
@@ -119,16 +119,18 @@ export function Header() {
               <Logo className="h-10 w-auto" />
             </Link>
             <div className="hidden md:flex md:gap-x-6">
-              <NavLink href="/#servicios">Servicios</NavLink>
-              <NavLink href="/#nuestro-equipo">Nuestro equipo</NavLink>
+              <NavLink href="/servicios">Servicios Legales</NavLink>
               <NavLink href="https://www.lginmobiliaria.es/" target={'_blank'}>
                 Inmobiliaria
               </NavLink>
+              <NavLink href="/#nuestro-equipo">Nuestro equipo</NavLink>
               <NavLink href="/#prensa">Prensa</NavLink>
             </div>
           </div>
           <div className="flex items-center gap-x-1 md:gap-x-8">
-            <Button href="/contacto">Contacto</Button>
+            <Button href="/contacto" color="navy">
+              Contacto
+            </Button>
             <div className="-mr-1 md:hidden">
               <MobileNavigation />
             </div>

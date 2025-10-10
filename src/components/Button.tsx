@@ -11,24 +11,22 @@ const baseStyles = {
 
 const variantStyles: Record<string, Record<string, string>> = {
   solid: {
-    slate:
-      'bg-slate-900 text-white hover:bg-mallorca-200 hover:text-slate-100 active:bg-slate-800 active:text-slate-300 focus-visible:outline-slate-900 ',
+    navy: 'bg-navy-900 text-white hover:bg-mallorca-200 hover:text-navy-100 active:bg-navy-800 active:text-navy-300 focus-visible:outline-navy-900 ',
     mallorca:
-      'bg-mallorca-600 text-white hover:text-slate-100 hover:bg-mallorca-500 active:bg-mallorca-800 active:text-slate-100 focus-visible:outline-mallorca-600',
+      'bg-mallorca-600 px-8 py-4  text-white hover:text-navy-100 hover:bg-mallorca-500 active:bg-mallorca-800 active:text-navy-100 focus-visible:outline-mallorca-600',
     white:
-      'bg-white text-slate-900 hover:bg-mallorca-50 active:bg-mallorca-200 active:text-slate-600 focus-visible:outline-white hover:text-white border-2 border-white',
+      'bg-white px-8 py-4 text-navy-900 hover:bg-mallorca-50 active:bg-mallorca-200 active:text-navy-600 focus-visible:outline-white hover:text-white border-2 border-white',
   },
   outline: {
-    slate:
-      'ring-slate-200 text-slate-700 hover:text-slate-900 hover:ring-slate-300 active:bg-slate-100 active:text-slate-600 focus-visible:outline-mallorca-600 focus-visible:ring-slate-300',
+    navy: 'ring-navy-200 text-navy-700 hover:text-navy-900 hover:ring-navy-300 active:bg-navy-100 active:text-navy-600 focus-visible:outline-mallorca-600 focus-visible:ring-navy-300',
     white:
-      'ring-slate-700 text-white hover:ring-slate-500 active:ring-slate-700 active:text-slate-400 focus-visible:outline-white',
+      'ring-navy-700 text-white hover:ring-navy-500 active:ring-navy-700 active:text-navy-400 focus-visible:outline-white',
   },
 }
 
 interface ButtonProps {
   variant?: 'solid' | 'outline'
-  color?: 'slate' | 'mallorca' | 'white'
+  color?: 'navy' | 'mallorca' | 'white'
   className?: string
   href?: string
   children: ReactNode
@@ -40,7 +38,7 @@ interface ButtonProps {
 
 export function Button({
   variant = 'solid',
-  color = 'slate',
+  color = 'navy',
   className,
   href,
   children,

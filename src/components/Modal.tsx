@@ -29,11 +29,11 @@ export function Modal({ open, setOpen }: ModalProps) {
             <Transition.Child
               as={Fragment}
               enter="ease-out duration-300"
-              enterFrom="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
-              enterTo="opacity-100 translate-y-0 sm:scale-100"
+              enterFrom="opacity-0 trannavy-y-4 sm:trannavy-y-0 sm:scale-95"
+              enterTo="opacity-100 trannavy-y-0 sm:scale-100"
               leave="ease-in duration-200"
-              leaveFrom="opacity-100 translate-y-0 sm:scale-100"
-              leaveTo="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
+              leaveFrom="opacity-100 trannavy-y-0 sm:scale-100"
+              leaveTo="opacity-0 trannavy-y-4 sm:trannavy-y-0 sm:scale-95"
             >
               <Dialog.Panel className="relative transform overflow-hidden rounded-lg bg-white px-4 pt-5 pb-4 text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-sm sm:p-6">
                 <div>
@@ -46,12 +46,12 @@ export function Modal({ open, setOpen }: ModalProps) {
                   <div className="mt-3 text-center sm:mt-5">
                     <Dialog.Title
                       as="h3"
-                      className="text-lg font-medium leading-6 text-gray-900"
+                      className="text-lg font-medium leading-6 text-navy-900"
                     >
                       Mensaje recibido
                     </Dialog.Title>
                     <div className="mt-2">
-                      <p className="text-sm text-gray-500">
+                      <p className="text-sm text-navy-500">
                         Nos pondremos en contacto contigo en la mayor brevedad
                         posible
                       </p>

@@ -1,10 +1,11 @@
 import Link from 'next/link'
 import { Button } from '@/components/Button'
+import { Container } from '@/components/Container'
 
 export function Address() {
   return (
-    <>
-      <h2 className="mt-20 text-3xl font-bold tracking-tight text-gray-900">
+    <Container>
+      <h2 className="mt-20 text-3xl font-bold tracking-tight text-navy-900">
         Dirección
       </h2>
       <div className="mt-8 gap-1 sm:grid-cols-2 md:flex lg:grid  lg:grid-cols-2">
@@ -38,6 +39,6 @@ export function Address() {
           ></iframe>
         </div>
       </div>
-    </>
+    </Container>
   )
 }

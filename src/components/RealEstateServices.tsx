@@ -66,62 +66,31 @@ export function RealEstateServices() {
       <Container>
         <div className="space-y-12">
           {/* Green Banner */}
-          <div className="relative overflow-hidden rounded-2xl bg-mallorca-600 p-8 md:p-12">
+          <div className="relative overflow-hidden rounded-2xl bg-mallorca-200 p-8 md:p-12">
             <div className="relative z-10">
-              {/* Category Tag */}
-              <div className="mb-6">
-                <span className="inline-flex items-center rounded-full bg-white px-4 py-2 text-sm font-medium ">
-                  Servicios Inmobiliarios
-                </span>
-              </div>
-
               {/* Main Content */}
               <div className="max-w-3xl">
                 <h2 className="text-2xl font-bold text-white sm:text-3xl md:text-4xl lg:text-5xl">
                   Tu próximo hogar comienza aquí
                 </h2>
                 <p className="mt-6 text-base text-white sm:text-lg md:text-xl">
-                  Asesoramiento inmobiliario profesional respaldado por la
-                  seguridad jurídica que solo un despacho de abogados puede
-                  ofrecer.
+                  Quieres ser el primero en recibir nuevas propiedades?
                 </p>
 
-                {/* Feature List */}
-                <ul className="mt-8 space-y-3">
-                  {[
-                    'Gestión integral de compraventa',
-                    'Asesoramiento legal incluido',
-                    'Valoraciones profesionales',
-                  ].map((feature, index) => (
-                    <li
-                      key={index}
-                      className="flex items-center text-sm text-white sm:text-base"
-                    >
-                      <svg
-                        className="mr-3 h-5 w-5 text-mallorca-50"
-                        fill="currentColor"
-                        viewBox="0 0 20 20"
-                      >
-                        <path
-                          fillRule="evenodd"
-                          d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                          clipRule="evenodd"
-                        />
-                      </svg>
-                      {feature}
-                    </li>
-                  ))}
-                </ul>
+                <div className="mt-10 flex flex-row">
+                  <input
+                    type="text"
+                    placeholder="email"
+                    className="mr-2 w-full rounded-lg border-2 border-white bg-white px-3 py-2 text-base font-medium text-mallorca-600 transition-colors hover:bg-mallorca-200 hover:text-white focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+                  />
 
-                {/* Call to Action Button */}
-                <div className="mt-10">
                   <a
                     href="https://www.lginmobiliaria.es/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center rounded-lg border-2 border-white bg-white px-6 py-3 text-lg font-semibold text-mallorca-600 transition-colors hover:bg-mallorca-200 hover:text-white focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+                    className="inline-flex items-center gap-2 rounded-lg border-2 border-white bg-white px-6 text-lg font-semibold text-mallorca-600 transition-colors hover:bg-mallorca-200 hover:text-white focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
                   >
-                    Consulta sin coste →
+                    Enviar <span className="text-lg">→</span>
                   </a>
                 </div>
               </div>
@@ -134,10 +103,10 @@ export function RealEstateServices() {
               <div key={index} className="rounded-xl bg-white p-8 shadow-lg">
                 <div className="flex flex-col items-center text-center">
                   <div className="mb-4">{stat.icon}</div>
-                  <div className="text-3xl font-bold text-gray-900 sm:text-4xl">
+                  <div className="text-3xl font-bold text-navy-900 sm:text-4xl">
                     {stat.number}
                   </div>
-                  <div className="mt-2 text-base text-gray-600 sm:text-lg">
+                  <div className="mt-2 text-base text-navy-600 sm:text-lg">
                     {stat.description}
                   </div>
                 </div>
