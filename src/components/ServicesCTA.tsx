@@ -1,4 +1,5 @@
 import { Container } from '@/components/Container'
+import Link from 'next/link'
 
 export function ServicesCTA() {
   return (
@@ -13,12 +14,12 @@ export function ServicesCTA() {
             cómo podemos ayudarte.
           </p>
           <div className="flex flex-col justify-center gap-4 sm:flex-row">
-            <a
+            <Link
               href="/contacto"
               className="inline-flex items-center justify-center rounded-lg bg-mallorca-600 px-8 py-4 font-semibold text-white transition-colors duration-200 hover:bg-mallorca-400"
             >
               Contactar Ahora
-            </a>
+            </Link>
           </div>
         </div>
       </Container>

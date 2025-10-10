@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import { Tab } from '@headlessui/react'
 import clsx from 'clsx'
 import Image from 'next/image'
+import Link from 'next/link'
 
 import { Container } from '@/components/Container'
 import {
@@ -53,12 +54,12 @@ export function Services() {
                 </p>
 
                 {/* CTA Button */}
-                <a
+                <Link
                   href="/#servicios"
                   className="mb-5 inline-block rounded-xl bg-white px-4 py-2 text-xs font-semibold text-navy-800 transition-colors duration-200 hover:bg-mallorca-200 hover:text-white sm:mb-6 sm:px-5 sm:py-2.5 sm:text-sm"
                 >
                   Servicios Legales
-                </a>
+                </Link>
               </div>
             </div>
 
