@@ -70,7 +70,7 @@ export function Services() {
 
                 {/* Description */}
                 <p className="mb-5 text-xs leading-relaxed text-mallorca-600 sm:mb-6 sm:text-sm lg:text-base">
-                  Agencia inmobiliaria en Palma de Mallorca20. Asesoramiento
+                  Agencia inmobiliaria en Palma de Mallorca. Asesoramiento
                   profesional en compraventa y alquiler de todo tipo de
                   propiedades: viviendas, promociones, locales comerciales,
                   naves industriales y solares. Gestión integral personalizada

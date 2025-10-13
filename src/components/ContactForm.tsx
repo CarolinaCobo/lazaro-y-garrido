@@ -230,7 +230,11 @@ export function ContactForm() {
                 </div>
               </div>
             </div>
-            <Button className="mt-6 w-full md:w-24" type="submit">
+            <Button
+              className="mt-6 w-full md:w-24"
+              color="mallorca"
+              type="submit"
+            >
               Enviar
             </Button>
           </div>
