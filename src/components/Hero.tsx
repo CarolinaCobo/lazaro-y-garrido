@@ -3,7 +3,7 @@ import { Container } from '@/components/Container'
 export function Hero() {
   return (
     <div className="relative overflow-hidden">
-      <Container className="relative py-16 text-center ">
+      <Container className="relative py-12 text-center ">
         <h1 className="mx-auto max-w-2xl font-display text-4xl font-medium tracking-tight text-navy-900 sm:text-6xl">
           <span className="text-mallorca relative whitespace-nowrap ">
             <svg
@@ -22,10 +22,6 @@ export function Hero() {
           laboral y administrativo. Tambien ofrecemos servicios inmobiliarios
           con obra nueva, compraventa de solares y propiedades.
         </p>
-        {/* <p className="mx-auto mt-2 max-w-2xl text-sm tracking-tight text-slate-100 md:text-xl">
-          Despacho con sede en Palma de Mallorca. Ofrecemos servicios en todo el
-          territorio nacional.
-        </p> */}
       </Container>
     </div>
   )

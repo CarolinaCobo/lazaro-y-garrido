@@ -18,7 +18,7 @@ const stats = [
         />
       </svg>
     ),
-    number: '20+',
+    number: '+20',
     description: 'Años de experiencia',
   },
   {
@@ -56,7 +56,7 @@ const stats = [
         />
       </svg>
     ),
-    number: '500+',
+    number: '+500',
     description: 'Propiedades gestionadas',
   },
 ]

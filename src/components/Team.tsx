@@ -51,7 +51,7 @@ export function Team() {
     <section
       id="nuestro-equipo"
       aria-label="team"
-      className="bg-white py-12 pt-8 sm:py-4"
+      className="bg-white py-14 pt-8 sm:py-4"
     >
       <Container>
         <div className="mx-auto max-w-2xl pt-4 md:text-center">

@@ -94,7 +94,7 @@ function MobileNavigation() {
             as="div"
             className="ring-mallorca--900/5 absolute inset-x-0 top-full mt-4 flex origin-top flex-col rounded-2xl bg-white p-4 text-sm tracking-tight text-navy-900 shadow-xl ring-1 sm:text-base"
           >
-            <MobileNavLink href="/#servicios">Servicios</MobileNavLink>
+            <MobileNavLink href="/#servicios">Servicios Legales</MobileNavLink>
             <MobileNavLink href="https://www.lginmobiliaria.es/">
               Inmobiliaria
             </MobileNavLink>

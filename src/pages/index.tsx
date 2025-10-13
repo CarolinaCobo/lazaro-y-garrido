@@ -1,5 +1,4 @@
 import Head from 'next/head'
-import { CallToAction } from '@/components/CallToAction'
 import { Press } from '@/components/Press'
 import { Footer } from '@/components/Footer'
 import { Header } from '@/components/Header'
@@ -43,7 +42,7 @@ export default function Home() {
       <main>
         <Hero />
         <Services />
-        <ServicesHero id="servicios" title="Nuestros Servicios Legales">
+        <ServicesHero title="Nuestros Servicios Legales">
           {{
             mainText: 'No defendemos casos,',
             subText: <span className="italic">defendemos personas.</span>,

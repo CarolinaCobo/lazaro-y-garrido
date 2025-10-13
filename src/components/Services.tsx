@@ -1,24 +1,10 @@
-import { useEffect, useState } from 'react'
-import { Tab } from '@headlessui/react'
-import clsx from 'clsx'
 import Image from 'next/image'
 import Link from 'next/link'
-
 import { Container } from '@/components/Container'
-import {
-  DocumentTextIcon,
-  LockClosedIcon,
-  UsersIcon,
-  BuildingOfficeIcon,
-  HomeIcon,
-  ScaleIcon,
-  KeyIcon,
-} from '@heroicons/react/24/outline'
 
 export function Services() {
   return (
     <section
-      id="servicios"
       aria-label="Servicios ofrecidos por el despacho"
       className="relative pt-4"
     >
@@ -31,7 +17,6 @@ export function Services() {
               <div className="relative z-10 max-w-lg text-center">
                 {/* Gavel Icon */}
                 <div className="mb-4 flex justify-center sm:mb-5">
-                  {/* <ScaleIcon className="h-10 w-10 text-white sm:h-12 sm:w-12" /> */}
                   <Image
                     src="/column.png"
                     alt="Key"
@@ -47,10 +32,11 @@ export function Services() {
                 </h1>
 
                 <p className="mb-5 text-xs leading-relaxed text-white sm:mb-6 sm:text-sm lg:text-base">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
-                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                  Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                  laboris.
+                  Despacho de abogados en Palma de Mallorca con ámbito de
+                  actuación nacional. Prestamos asesoramiento jurídico integral
+                  desde un enfoque personalizado y riguroso. Cada caso requiere
+                  una estrategia específica respaldada por la experiencia de un
+                  equipo multidisciplinar especializado.
                 </p>
 
                 {/* CTA Button */}
@@ -75,7 +61,6 @@ export function Services() {
                     height={60}
                     className="rounded-full"
                   />
-                  {/* <KeyIcon className="h-10 w-10 text-mallorca-600 sm:h-12 sm:w-12" /> */}
                 </div>
 
                 {/* Title */}
@@ -85,10 +70,12 @@ export function Services() {
 
                 {/* Description */}
                 <p className="mb-5 text-xs leading-relaxed text-mallorca-600 sm:mb-6 sm:text-sm lg:text-base">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
-                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                  Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                  laboris.
+                  Agencia inmobiliaria en Palma de Mallorca20. Asesoramiento
+                  profesional en compraventa y alquiler de todo tipo de
+                  propiedades: viviendas, promociones, locales comerciales,
+                  naves industriales y solares. Gestión integral personalizada
+                  respaldada por años de experiencia y conocimiento del mercado
+                  inmobiliario balear.
                 </p>
 
                 {/* CTA Button */}
@@ -100,34 +87,6 @@ export function Services() {
                 >
                   Servicios Inmobiliarios
                 </a>
-
-                {/* Bottom Links */}
-                {/* <div className="flex flex-wrap justify-center gap-4 text-xs sm:gap-6">
-                  <a
-                    href="https://www.lginmobiliaria.es/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="transition-colors hover:text-white"
-                  >
-                    Comprar
-                  </a>
-                  <a
-                    href="https://www.lginmobiliaria.es/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="transition-colors hover:text-navy-600"
-                  >
-                    Vender
-                  </a>
-                  <a
-                    href="https://www.lginmobiliaria.es/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="transition-colors hover:text-navy-600"
-                  >
-                    Alquilar
-                  </a>
-                </div> */}
               </div>
             </div>
           </div>
