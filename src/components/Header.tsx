@@ -121,14 +121,21 @@ export function Header() {
               aria-label="Home"
               className="flex flex-row items-center gap-x-3"
             >
-              <Logo className="h-10 w-auto" />
-
+              {/* <Logo className="h-10 w-auto" /> */}
               <Image
-                src="/lg-2.png"
-                alt="LG Logo"
+                src="/logo.png"
+                alt="Lazaro & Garrido Logo"
                 width={140}
                 height={50}
-                className="h-10 w-auto"
+                className="h-12 w-auto"
+              />
+
+              <Image
+                src="/logo-lg-long.png"
+                alt="LG Logo"
+                width={100}
+                height={40}
+                className="h-8 w-auto"
               />
             </Link>
             <div className="hidden md:flex md:gap-x-6">

@@ -2,7 +2,7 @@ import { Container } from '@/components/Container'
 
 export function Hero() {
   return (
-    <div className="relative overflow-hidden">
+    <div className="relative overflow-hidden bg-navy-50">
       <Container className="relative py-12 text-center ">
         <h1 className="mx-auto max-w-2xl font-display text-4xl font-medium tracking-tight text-navy-900 sm:text-6xl">
           <span className="text-mallorca relative whitespace-nowrap ">

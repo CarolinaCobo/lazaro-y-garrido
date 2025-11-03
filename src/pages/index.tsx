@@ -17,24 +17,24 @@ export default function Home() {
         <title>Lázaro & Garrido - Abogados</title>
         <meta
           name="description"
-          content="Abogados en Palma de Mallorca. No defendemos casos, defendemos personas."
+          content="Abogados en Palma de Mallorca. No defendemos casos, defendemos personas. Agencia inmobiliaria en Palma de Mallorca. Asesoramiento profesional en compraventa y alquiler de todo tipo de propiedades: viviendas, promociones, locales comerciales, naves industriales y solares. Gestión integral personalizada respaldada por años de experiencia y conocimiento del mercado inmobiliario balear."
         />
 
         <meta
           key="og:title"
           property="og:title"
-          content="Lázaro & Garrido - Abogados en Palma de Mallorca"
+          content="Lázaro & Garrido Abogados & LG Gestión Inmobiliaria - Palma de Mallorca"
         />
         <meta property="og:image" content="/ogimage.png" key="og:image" />
         <meta
           key="og:description"
           property="og:description"
-          content="No defendemos casos, defendemos personas. Abogados en Palma de Mallorca y todo el territorio nacional."
+          content="No defendemos casos, defendemos personas. Abogados en Palma de Mallorca y todo el territorio nacional. Agencia inmobiliaria en Palma de Mallorca. Asesoramiento profesional en compraventa y alquiler de todo tipo de propiedades: viviendas, promociones, locales comerciales, naves industriales y solares. Gestión integral personalizada respaldada por años de experiencia y conocimiento del mercado inmobiliario balear."
         />
         <meta
           key="description"
           property="description"
-          content="No defendemos casos, defendemos personas."
+          content="No defendemos casos, defendemos personas. Abogados en Palma de Mallorca y todo el territorio nacional. Agencia inmobiliaria en Palma de Mallorca. Asesoramiento profesional en compraventa y alquiler de todo tipo de propiedades: viviendas, promociones, locales comerciales, naves industriales y solares. Gestión integral personalizada respaldada por años de experiencia y conocimiento del mercado inmobiliario balear."
         />
         <meta property="og:url" content="http://www.lazarogarrido.com/" />
       </Head>
