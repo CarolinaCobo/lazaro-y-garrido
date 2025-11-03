@@ -27,8 +27,15 @@ export function ContactForm() {
 
   const onSubmit = (data: FormData) => {
     console.log(data)
+    // Transform camelCase to kebab-case to match email template
+    const transformedData = {
+      'first-name': data.firstName,
+      'last-name': data.lastName,
+      email: data.email,
+      message: data.message,
+    }
     axios
-      .post('https://eo7vnosi4j5466v.m.pipedream.net', data)
+      .post('https://eo7vnosi4j5466v.m.pipedream.net', transformedData)
       .then((response) => {
         setOpen(true)
         reset()

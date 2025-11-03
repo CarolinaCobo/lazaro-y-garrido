@@ -72,11 +72,11 @@ export function RealEstateServices() {
             {stats.map((stat, index) => (
               <div key={index} className="rounded-xl bg-white p-4 shadow-lg">
                 <div className="flex flex-col items-center text-center">
-                  <div className="mb-4">{stat.icon}</div>
+                  <div className="mb-1">{stat.icon}</div>
                   <div className="text-lg font-bold text-navy-900 sm:text-xl">
                     {stat.number}
                   </div>
-                  <div className="mt-2 text-sm text-navy-600 sm:text-base">
+                  <div className="mt-1 text-sm text-navy-600 sm:text-base">
                     {stat.description}
                   </div>
                 </div>

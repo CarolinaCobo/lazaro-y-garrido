@@ -6,6 +6,7 @@ import { useForm } from 'react-hook-form'
 import { Modal } from './Modal'
 
 interface FormData {
+  'full-name': string
   email: string
   phone: string
   message: string
@@ -24,7 +25,7 @@ export function RealStateContact() {
   const onSubmit = (data: FormData) => {
     console.log(data)
     axios
-      .post('https://eo7vnosi4j5466v.m.pipedream.net', data)
+      .post('https://eo9jhkrdg16zk8w.m.pipedream.net', data)
       .then((response) => {
         setOpen(true)
         reset()
@@ -42,7 +43,7 @@ export function RealStateContact() {
         <div className="relative rounded-2xl  bg-white shadow-lg">
           <div className="relative h-40 overflow-hidden rounded-b-none md:absolute md:left-0 md:h-full md:w-1/3 lg:w-1/2">
             <Image
-              alt=""
+              alt="Foto de una pareja sujetando las llaves de su nueva casa"
               src="https://images.pexels.com/photos/8293700/pexels-photo-8293700.jpeg"
               fill
               className="rounded-t-2xl object-cover object-center md:rounded-l-2xl md:rounded-r-none"
@@ -64,6 +65,28 @@ export function RealStateContact() {
                       </p>
                       <div className="mt-2">
                         <div className="space-y-2">
+                          <div>
+                            <label
+                              htmlFor="full-name"
+                              className="block text-xs font-medium text-navy-700 sm:text-sm"
+                            >
+                              Nombre completo
+                              <span className="text-mallorca-500">*</span>
+                            </label>
+                            <input
+                              {...register('full-name', { required: true })}
+                              type="text"
+                              name="full-name"
+                              id="full-name"
+                              placeholder="Nombre completo"
+                              className="mt-1 w-full rounded-md border border-navy-300 px-3 py-2 text-sm focus:border-mallorca-500 focus:outline-none focus:ring-1 focus:ring-mallorca-500"
+                            />
+                            {errors['full-name'] && (
+                              <span className="text-xs text-red-600">
+                                Este campo es obligatorio
+                              </span>
+                            )}
+                          </div>
                           <div>
                             <label
                               htmlFor="email"
