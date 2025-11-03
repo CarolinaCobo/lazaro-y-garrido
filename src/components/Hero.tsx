@@ -1,9 +1,24 @@
+import { Button } from '@/components/Button'
 import { Container } from '@/components/Container'
+import BackgroundImage from '../images/background.jpeg'
+import Image from 'next/image'
 
 export function Hero() {
   return (
     <div className="relative overflow-hidden bg-navy-50">
-      <Container className="relative py-12 text-center ">
+      <div
+        className=" sm:absolute sm:inset-y-0 sm:block sm:h-full sm:w-full"
+        aria-hidden="true"
+      >
+        <div className="absolute inset-0">
+          <Image
+            className="h-full w-full object-cover opacity-20"
+            src={BackgroundImage}
+            alt=""
+          />
+        </div>
+      </div>
+      <Container className="relative pt-20 pb-16 text-center lg:pt-32">
         <h1 className="mx-auto max-w-2xl font-display text-4xl font-medium tracking-tight text-navy-900 sm:text-6xl">
           <span className="text-mallorca relative whitespace-nowrap ">
             <svg
