@@ -68,7 +68,7 @@ function ServiceCard({ service }: { service: Service }) {
         <div className="flex items-center justify-between">
           <div className="mb-0 flex items-center md:mb-6">
             <div className="flex-shrink-0">
-              <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-mallorca-50 transition-colors duration-300 group-hover:bg-mallorca-200 md:h-12 md:w-12">
+              <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-mallorca-300 transition-colors duration-300 md:h-12 md:w-12">
                 <service.icon className="h-6 w-6 text-white md:h-6 md:w-6" />
               </div>
             </div>

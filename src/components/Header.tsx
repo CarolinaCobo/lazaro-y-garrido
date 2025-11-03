@@ -1,5 +1,6 @@
 import { Popover, Transition } from '@headlessui/react'
 import clsx from 'clsx'
+import Image from 'next/image'
 import Link from 'next/link'
 import { Fragment, ReactNode } from 'react'
 import { Button } from '@/components/Button'
@@ -115,8 +116,20 @@ export function Header() {
       <Container>
         <nav className="relative z-50 flex justify-between">
           <div className="flex items-center md:gap-x-12">
-            <Link href="/" aria-label="Home">
+            <Link
+              href="/"
+              aria-label="Home"
+              className="flex flex-row items-center gap-x-3"
+            >
               <Logo className="h-10 w-auto" />
+
+              <Image
+                src="/lg-2.png"
+                alt="LG Logo"
+                width={140}
+                height={50}
+                className="h-10 w-auto"
+              />
             </Link>
             <div className="hidden md:flex md:gap-x-6">
               <NavLink href="/#servicios">Servicios Legales</NavLink>
