@@ -12,7 +12,7 @@ export function NavLink({ href, children, target, rel }: NavLinkProps) {
   return (
     <Link
       href={href}
-      className="inline-block rounded-full py-1 px-2 text-sm text-slate-700 hover:bg-mallorca-200 hover:text-white"
+      className="inline-block rounded-lg py-1 px-2 text-sm text-navy-900 hover:text-mallorca-600  "
       target={target}
       rel={rel}
     >

@@ -5,15 +5,15 @@ export function CallToAction() {
   return (
     <section
       id="get-started-today"
-      className="relative overflow-hidden bg-mallorca-900 py-32"
+      className="relative overflow-hidden bg-navy-50 py-28"
     >
       <Container className="relative">
         <div className="mx-auto max-w-lg text-center">
-          <h2 className="font-display text-3xl tracking-tight text-white sm:text-4xl">
+          <h2 className="font-display text-xl tracking-tight text-navy-900 sm:text-2xl md:text-3xl">
             Para más información{' '}
           </h2>
-          <Button href="/contacto" color="white" className="mt-10">
-            Contacto
+          <Button href="/contacto" color="mallorca" className="mt-10">
+            Contacta con nosotros
           </Button>
         </div>
       </Container>

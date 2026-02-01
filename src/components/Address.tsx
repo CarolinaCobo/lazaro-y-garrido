@@ -1,17 +1,18 @@
 import Link from 'next/link'
 import { Button } from '@/components/Button'
+import { Container } from '@/components/Container'
 
 export function Address() {
   return (
-    <>
-      <h2 className="mt-20 text-3xl font-bold tracking-tight text-gray-900">
+    <Container>
+      <h2 className="mt-20 text-2xl font-bold tracking-tight text-navy-900">
         Dirección
       </h2>
       <div className="mt-8 gap-1 sm:grid-cols-2 md:flex lg:grid  lg:grid-cols-2">
         <div>
           <Link
             href="https://goo.gl/maps/E3abA2DAn8Ny2h7D6"
-            className="text-lg font-medium text-mallorca-600 hover:underline"
+            className="text-base font-medium text-mallorca-600 hover:underline"
           >
             Carrer de la Reina Maria Cristina, 4, 2°-3ª,
             <span className="block">Palma, Illes Balears</span>
@@ -38,6 +39,6 @@ export function Address() {
           ></iframe>
         </div>
       </div>
-    </>
+    </Container>
   )
 }

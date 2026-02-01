@@ -1,5 +1,6 @@
 import { Popover, Transition } from '@headlessui/react'
 import clsx from 'clsx'
+import Image from 'next/image'
 import Link from 'next/link'
 import { Fragment, ReactNode } from 'react'
 import { Button } from '@/components/Button'
@@ -36,7 +37,7 @@ function MobileNavIcon({ open }: MobileNavIconProps) {
   return (
     <svg
       aria-hidden="true"
-      className="h-3.5 w-3.5 overflow-visible stroke-slate-700"
+      className="h-3.5 w-3.5 overflow-visible stroke-navy-700"
       fill="none"
       strokeWidth={2}
       height="100%"
@@ -79,7 +80,7 @@ function MobileNavigation() {
           leaveFrom="opacity-100"
           leaveTo="opacity-0"
         >
-          <Popover.Overlay className="fixed inset-0 bg-slate-300/50" />
+          <Popover.Overlay className="fixed inset-0 bg-navy-300/50" />
         </Transition.Child>
         <Transition.Child
           as={Fragment}
@@ -92,14 +93,14 @@ function MobileNavigation() {
         >
           <Popover.Panel
             as="div"
-            className="ring-mallorca--900/5 absolute inset-x-0 top-full mt-4 flex origin-top flex-col rounded-2xl bg-white p-4 text-lg tracking-tight text-slate-900 shadow-xl ring-1"
+            className="ring-mallorca--900/5 absolute inset-x-0 top-full mt-4 flex origin-top flex-col rounded-2xl bg-white p-4 text-sm tracking-tight text-navy-900 shadow-xl ring-1 sm:text-base"
           >
-            <MobileNavLink href="/#servicios">Servicios</MobileNavLink>
-            <MobileNavLink href="/#nuestro-equipo">
-              Nuestro Equipo
-            </MobileNavLink>
+            <MobileNavLink href="/#servicios">Servicios Legales</MobileNavLink>
             <MobileNavLink href="https://www.lginmobiliaria.es/">
               Inmobiliaria
+            </MobileNavLink>
+            <MobileNavLink href="/#nuestro-equipo">
+              Nuestro Equipo
             </MobileNavLink>
             <MobileNavLink href="/#prensa">Prensa</MobileNavLink>
           </Popover.Panel>
@@ -115,20 +116,41 @@ export function Header() {
       <Container>
         <nav className="relative z-50 flex justify-between">
           <div className="flex items-center md:gap-x-12">
-            <Link href="/" aria-label="Home">
-              <Logo className="h-10 w-auto" />
+            <Link
+              href="/"
+              aria-label="Home"
+              className="flex flex-row items-center gap-x-3"
+            >
+              {/* <Logo className="h-10 w-auto" /> */}
+              <Image
+                src="/logo.png"
+                alt="Lazaro & Garrido Logo"
+                width={140}
+                height={50}
+                className="h-12 w-auto"
+              />
+
+              <Image
+                src="/logo-lg-long.png"
+                alt="LG Logo"
+                width={100}
+                height={40}
+                className="h-8 w-auto"
+              />
             </Link>
             <div className="hidden md:flex md:gap-x-6">
-              <NavLink href="/#servicios">Servicios</NavLink>
-              <NavLink href="/#nuestro-equipo">Nuestro equipo</NavLink>
+              <NavLink href="/#servicios">Servicios Legales</NavLink>
               <NavLink href="https://www.lginmobiliaria.es/" target={'_blank'}>
                 Inmobiliaria
               </NavLink>
+              <NavLink href="/#nuestro-equipo">Nuestro equipo</NavLink>
               <NavLink href="/#prensa">Prensa</NavLink>
             </div>
           </div>
           <div className="flex items-center gap-x-1 md:gap-x-8">
-            <Button href="/contacto">Contacto</Button>
+            <Button href="/contacto" color="navy">
+              Contacto
+            </Button>
             <div className="-mr-1 md:hidden">
               <MobileNavigation />
             </div>

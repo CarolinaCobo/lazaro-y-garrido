@@ -6,6 +6,7 @@ import { Button } from '@/components/Button'
 import { useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { Modal } from './Modal'
+import { Container } from './Container'
 
 interface FormData {
   firstName: string
@@ -26,8 +27,15 @@ export function ContactForm() {
 
   const onSubmit = (data: FormData) => {
     console.log(data)
+    // Transform camelCase to kebab-case to match email template
+    const transformedData = {
+      'first-name': data.firstName,
+      'last-name': data.lastName,
+      email: data.email,
+      message: data.message,
+    }
     axios
-      .post('https://eo7vnosi4j5466v.m.pipedream.net', data)
+      .post('https://eo7vnosi4j5466v.m.pipedream.net', transformedData)
       .then((response) => {
         setOpen(true)
         reset()
@@ -36,8 +44,8 @@ export function ContactForm() {
   }
 
   return (
-    <div className="">
-      <h2 className="py-8 text-center text-3xl font-bold tracking-tight text-gray-900">
+    <Container>
+      <h2 className="py-8 text-center text-3xl font-bold tracking-tight text-navy-900">
         Contacta directamente con nuestro equipo{' '}
       </h2>
       <ul
@@ -55,7 +63,7 @@ export function ContactForm() {
                   </div>
                 </div>
                 <div>
-                  <dl className="mt-2 text-base text-gray-500">
+                  <dl className="mt-2 text-base text-navy-500">
                     <div className="mb-1 flex">
                       <Link
                         href={`mailto:${person.email}`}
@@ -115,7 +123,7 @@ export function ContactForm() {
           </li>
         ))}
       </ul>
-      <p className="text-md mt-6 text-gray-500">
+      <p className="text-md mt-6 text-navy-500">
         Si no sabes con quien deberias contactar puedes escribirnos a{' '}
         <Link
           href="mailto:info@lazarogarrido.com"
@@ -125,7 +133,7 @@ export function ContactForm() {
         </Link>
       </p>
 
-      <h2 className=" mt-20 text-center text-3xl font-bold tracking-tight text-gray-900">
+      <h2 className=" mt-20 text-center text-3xl font-bold tracking-tight text-navy-900">
         Formulario de contacto{' '}
       </h2>
 
@@ -140,7 +148,7 @@ export function ContactForm() {
               <div className="col-span-6 sm:col-span-4">
                 <label
                   htmlFor="firstName"
-                  className="block text-sm font-medium text-gray-700"
+                  className="block text-sm font-medium text-navy-700"
                 >
                   Nombre<span className="text-mallorca-500 ">*</span>
                 </label>
@@ -151,7 +159,7 @@ export function ContactForm() {
                   id="firstName"
                   placeholder="Maria"
                   autoComplete="given-name"
-                  className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-mallorca-500 focus:ring-mallorca-500 sm:text-sm"
+                  className="mt-1 block w-full rounded-md border-navy-300 shadow-sm focus:border-mallorca-500 focus:ring-mallorca-500 sm:text-sm"
                 />
                 {errors.firstName && (
                   <span className="text-red-600">
@@ -162,7 +170,7 @@ export function ContactForm() {
               <div className="col-span-6 sm:col-span-4">
                 <label
                   htmlFor="lastName"
-                  className="block text-sm font-medium text-gray-700"
+                  className="block text-sm font-medium text-navy-700"
                 >
                   Apellidos<span className="text-mallorca-500 ">*</span>
                 </label>
@@ -173,7 +181,7 @@ export function ContactForm() {
                   name="lastName"
                   id="lastName"
                   autoComplete="family-name"
-                  className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-mallorca-500 focus:ring-mallorca-500 sm:text-sm"
+                  className="mt-1 block w-full rounded-md border-navy-300 shadow-sm focus:border-mallorca-500 focus:ring-mallorca-500 sm:text-sm"
                 />
                 {errors.lastName && (
                   <span className="text-red-600">
@@ -184,7 +192,7 @@ export function ContactForm() {
               <div className="col-span-6 sm:col-span-4">
                 <label
                   htmlFor="email"
-                  className="block text-sm font-medium text-gray-700"
+                  className="block text-sm font-medium text-navy-700"
                 >
                   Dirección de correo electrónico
                   <span className="text-mallorca-500 ">*</span>
@@ -196,7 +204,7 @@ export function ContactForm() {
                   id="email"
                   autoComplete="email"
                   placeholder="ej: email@email.com"
-                  className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-mallorca-500 focus:ring-mallorca-500 sm:text-sm"
+                  className="mt-1 block w-full rounded-md border-navy-300 shadow-sm focus:border-mallorca-500 focus:ring-mallorca-500 sm:text-sm"
                 />
                 {errors.email && (
                   <span className="text-red-600">
@@ -207,7 +215,7 @@ export function ContactForm() {
               <div className="col-span-6 sm:col-span-4">
                 <label
                   htmlFor="message"
-                  className=" text-sm font-medium text-gray-700"
+                  className=" text-sm font-medium text-navy-700"
                 >
                   Mensaje<span className="text-mallorca-500 ">*</span>
                 </label>
@@ -217,7 +225,7 @@ export function ContactForm() {
                     id="message"
                     name="message"
                     rows={3}
-                    className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-mallorca-500 focus:ring-mallorca-500 sm:text-sm"
+                    className="mt-1 block w-full rounded-md border-navy-300 shadow-sm focus:border-mallorca-500 focus:ring-mallorca-500 sm:text-sm"
                     placeholder="Desearía saber más sobre..."
                     defaultValue={''}
                   />
@@ -229,13 +237,17 @@ export function ContactForm() {
                 </div>
               </div>
             </div>
-            <Button className="mt-6 w-full md:w-24" type="submit">
+            <Button
+              className="mt-6 w-full md:w-24"
+              color="mallorca"
+              type="submit"
+            >
               Enviar
             </Button>
           </div>
           <Modal open={open} setOpen={setOpen} />
         </div>
       </form>
-    </div>
+    </Container>
   )
 }

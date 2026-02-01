@@ -1,134 +1,96 @@
-import { useEffect, useState } from 'react'
-import { Tab } from '@headlessui/react'
-import clsx from 'clsx'
-
+import Image from 'next/image'
+import Link from 'next/link'
 import { Container } from '@/components/Container'
 
-interface Service {
-  title: string
-  description: string
-  image: string
-}
-
-const servicesList: Service[] = [
-  {
-    title: 'Civil',
-    description:
-      'En Lázaro & Garrido abogados prestamos servicios en procesos matrimoniales obligaciones y contratos, responsabilidad civil por culpa contractual y extracontractual, accidentes de tráfico, consumidores y usuarios, herencias y sucesiones.',
-    image: '',
-  },
-  {
-    title: 'Penal',
-    description:
-      'Ejercemos la acusación particular o defensa en todo tipo de procesos penales derivados de la comisión de delitos de cualquier naturaleza.',
-    image: '',
-  },
-  {
-    title: 'Laboral',
-    description:
-      'Ejercemos la representación de la parte actora o demandada en procesos de despido, sanciones, derechos fundamentales, seguridad social, reclamaciones de cantidades. ',
-    image: '',
-  },
-  {
-    title: 'Administrativo',
-    description:
-      'Realizamos la representación de los interesados en procedimientos sancionadores, responsabilidad patrimonial de las Administraciones Públicas, urbanístico etc.',
-    image: '',
-  },
-]
-
 export function Services() {
-  let [tabOrientation, setTabOrientation] = useState<'horizontal' | 'vertical'>('horizontal')
-
-  useEffect(() => {
-    let lgMediaQuery = window.matchMedia('(min-width: 1024px)')
-
-    function onMediaQueryChange({ matches }: { matches: boolean }) {
-      setTabOrientation(matches ? 'vertical' : 'horizontal')
-    }
-
-    onMediaQueryChange(lgMediaQuery)
-    lgMediaQuery.addEventListener('change', onMediaQueryChange)
-
-    return () => {
-      lgMediaQuery.removeEventListener('change', onMediaQueryChange)
-    }
-  }, [])
-
   return (
     <section
-      id="servicios"
       aria-label="Servicios ofrecidos por el despacho"
-      className="relative overflow-hidden bg-mallorca-900 pt-20 pb-28 sm:py-32"
+      className="relative pt-4"
     >
-      <Container className="relative">
-        <div className="max-w-2xl md:mx-auto md:text-center xl:max-w-none">
-          <h2 className="bg-mallorca-900 font-display text-3xl tracking-tight text-white sm:text-4xl md:text-5xl">
-            No defendemos casos, defendemos personas.
-          </h2>
-          <p className="mt-6 text-lg tracking-tight text-blue-100"></p>
-        </div>
-        <Tab.Group
-          as="div"
-          className="mt-16 grid grid-cols-1 items-center gap-y-2 pt-10 sm:gap-y-6 "
-          vertical={tabOrientation === 'vertical'}
-        >
-          {({ selectedIndex }: { selectedIndex: number }) => (
-            <>
-              <div className="-mx-4 flex overflow-x-auto pb-4 sm:mx-0 sm:overflow-visible sm:pb-0 lg:col-span-5">
-                <Tab.List className="relative z-10 flex gap-x-4 whitespace-nowrap px-4 sm:mx-auto sm:px-0 lg:mx-0 lg:block lg:gap-x-0 lg:gap-y-1 lg:whitespace-normal">
-                  {servicesList.map((service, serviceIndex) => (
-                    <div
-                      key={service.title}
-                      className={clsx(
-                        'group relative rounded-full py-1 px-4 lg:rounded-xl lg:p-6',
-                        selectedIndex === serviceIndex
-                          ? 'bg-white lg:bg-white/10 lg:ring-1 lg:ring-inset lg:ring-white/10'
-                          : 'hover:bg-white/10 lg:hover:bg-white/5'
-                      )}
-                    >
-                      <h3>
-                        <Tab
-                          className={clsx(
-                            'font-display text-lg [&:not(:focus-visible)]:focus:outline-none',
-                            selectedIndex === serviceIndex
-                              ? 'text-mallorca-600 lg:text-white'
-                              : 'text-blue-100 hover:text-white lg:text-white'
-                          )}
-                        >
-                          <span className="absolute inset-0 rounded-full lg:rounded-r-none lg:rounded-l-xl" />
-                          {service.title}
-                        </Tab>
-                      </h3>
-                      <p
-                        className={clsx(
-                          'mt-2 hidden text-sm lg:block',
-                          selectedIndex === serviceIndex
-                            ? 'text-white'
-                            : 'text-blue-100 group-hover:text-white'
-                        )}
-                      >
-                        {service.description}
-                      </p>
-                    </div>
-                  ))}
-                </Tab.List>
+      <Container>
+        {/* Two Card Layout */}
+        <div className="mx-auto max-w-7xl">
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+            {/* Left Card - Legal Services */}
+            <div className="relative flex h-full min-h-[300px] flex-col items-center justify-center rounded-2xl bg-mallorca-600 px-6 py-6 text-white shadow-xl lg:px-10">
+              <div className="relative z-10 max-w-lg text-center">
+                {/* Gavel Icon */}
+                <div className="mb-4 flex justify-center sm:mb-5">
+                  <Image
+                    src="/column.png"
+                    alt="Key"
+                    width={45}
+                    height={45}
+                    className="rounded-full bg-white"
+                  />
+                </div>
+
+                {/* Title */}
+                <h1 className="mb-2 text-lg font-bold uppercase tracking-wide sm:text-xl lg:text-2xl">
+                  LAZÁRO Y GARRIDO ABOGADOS
+                </h1>
+
+                <p className="mb-5 text-xs leading-relaxed text-white sm:mb-6 sm:text-sm lg:text-base">
+                  Despacho de abogados en Palma de Mallorca con ámbito de
+                  actuación nacional. Prestamos asesoramiento jurídico integral
+                  desde un enfoque personalizado y riguroso. Cada caso requiere
+                  una estrategia específica respaldada por la experiencia de un
+                  equipo multidisciplinar especializado.
+                </p>
+
+                {/* CTA Button */}
+                <Link
+                  href="/#servicios"
+                  className="mb-5 inline-block rounded-xl bg-white px-4 py-2 text-xs font-semibold text-navy-800 transition-colors duration-200 hover:bg-mallorca-200 hover:text-white sm:mb-6 sm:px-5 sm:py-2.5 sm:text-sm"
+                >
+                  Servicios Legales
+                </Link>
               </div>
-              <Tab.Panels className="">
-                {servicesList.map((service) => (
-                  <Tab.Panel key={service.title} unmount={false}>
-                    <div className="relative sm:px-6 lg:hidden">
-                      <div className="absolute -inset-x-4 top-[-6.5rem] bottom-[-4.25rem] bg-white/10 ring-1 ring-inset ring-white/10 sm:inset-x-0 sm:rounded-xl" />
-                      <p className="relative mx-auto max-w-2xl text-base text-white sm:text-center">
-                        {service.description}
-                      </p>
-                    </div>
-                  </Tab.Panel>
-                ))}
-              </Tab.Panels>
-            </>
-          )}
-        </Tab.Group>
+            </div>
+
+            {/* Right Card - Real Estate Services */}
+            <div className="relative flex h-full min-h-[300px] flex-col items-center justify-center rounded-2xl border border-mallorca-600 bg-white px-6 py-6 text-mallorca-600 shadow-xl lg:px-10">
+              <div className="relative z-10 max-w-lg text-center">
+                {/* House with Key Icon */}
+                <div className=" flex justify-center rounded-full sm:mb-2">
+                  <Image
+                    src="/lg-logo.png"
+                    alt="Key"
+                    width={60}
+                    height={60}
+                    className="rounded-full"
+                  />
+                </div>
+
+                {/* Title */}
+                <h1 className="mb-2 text-lg font-bold uppercase tracking-wide sm:text-xl lg:text-2xl">
+                  L&G INMOBILIARIA
+                </h1>
+
+                {/* Description */}
+                <p className="mb-5 text-xs leading-relaxed text-mallorca-600 sm:mb-6 sm:text-sm lg:text-base">
+                  Agencia inmobiliaria en Palma de Mallorca. Asesoramiento
+                  profesional en compraventa y alquiler de todo tipo de
+                  propiedades: viviendas, promociones, locales comerciales,
+                  naves industriales y solares. Gestión integral personalizada
+                  respaldada por años de experiencia y conocimiento del mercado
+                  inmobiliario balear.
+                </p>
+
+                {/* CTA Button */}
+                <a
+                  href="https://www.lginmobiliaria.es/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mb-5 inline-block rounded-xl bg-mallorca-600 px-4 py-2 text-xs font-semibold text-white transition-colors duration-200 hover:bg-mallorca-700 sm:mb-6 sm:px-5 sm:py-2.5 sm:text-sm"
+                >
+                  Servicios Inmobiliarios
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
       </Container>
     </section>
   )

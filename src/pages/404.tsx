@@ -20,10 +20,10 @@ export default function Custom404() {
         <div className="py-16">
           <div className="text-center">
             <p className="text-base font-semibold text-mallorca-600">404</p>
-            <h1 className="mt-2 text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl">
+            <h1 className="mt-2 text-4xl font-bold tracking-tight text-navy-900 sm:text-5xl">
               Página no encontrada
             </h1>
-            <p className="mt-2 text-base text-gray-500">
+            <p className="mt-2 text-base text-navy-500">
               Lo sentimos pero no podemos encontrar la página que estás buscando
             </p>
             <div className="mt-6">
@@ -42,7 +42,7 @@ export default function Custom404() {
         <nav className="flex justify-center space-x-4">
           <Link
             href="/contacto"
-            className="text-sm font-medium text-gray-500 hover:text-gray-600"
+            className="text-sm font-medium text-navy-500 hover:text-navy-600"
           >
             Contáctanos
           </Link>
