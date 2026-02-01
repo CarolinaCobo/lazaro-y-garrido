@@ -18,39 +18,39 @@ interface Service {
 
 const servicesList: Service[] = [
   {
-    title: 'Civil',
+    title: 'Derecho Civil',
     description:
-      'Prestamos servicios en procesos matrimoniales obligaciones y contratos, responsabilidad civil por culpa contractual y extracontractual, accidentes de tráfico, consumidores y usuarios, herencias y sucesiones.',
+      '​Soluciones para su tranquilidad diaria. Le asesoramos en los momentos clave: herencias, procesos de familia, contratos y reclamaciones por accidentes. Estamos a su lado para defender sus intereses y los de su familia.',
     icon: DocumentTextIcon,
   },
   {
-    title: 'Penal',
+    title: 'Derecho Penal',
     description:
-      'Ejercemos la acusación particular o defensa en todo tipo de procesos penales derivados de la comisión de delitos de cualquier naturaleza.',
+      '​​Soluciones para su tranquilidad diaria. Le asesoramos en los momentos clave: herencias, procesos de familia, contratos y reclamaciones por accidentes. Estamos a su lado para defender sus intereses y los de su familia.',
     icon: LockClosedIcon,
   },
   {
-    title: 'Laboral',
+    title: 'Derecho Laboral',
     description:
-      'Ejercemos la representación de la parte actora o demandada en procesos de despido, sanciones, derechos fundamentales, seguridad social, reclamaciones de cantidades.',
+      'Sus derechos en el trabajo, protegidos. Defendemos sus intereses laborales con firmeza. Le representamos en despidos, reclamaciones de cantidad y conflictos con la Seguridad Social, buscando siempre la mejor solución para usted.',
     icon: UsersIcon,
   },
   {
-    title: 'Administrativo',
+    title: 'Derecho Administrativo',
     description:
-      'Realizamos la representación de los interesados en procedimientos sancionadores, responsabilidad patrimonial de las Administraciones Públicas, urbanístico etc.',
+      '​Su defensa frente a la Administración. Le acompañamos en cualquier trámite o reclamación frente a organismos públicos. Somos especialistas en recursos ante sanciones, responsabilidad patrimonial y gestión urbanística, simplificando los procesos para usted.',
     icon: BuildingOfficeIcon,
   },
   {
-    title: 'Inmobiliario',
+    title: 'Gestión Inmobiliaria',
     description:
-      'Asesoramiento inmobiliario profesional, realizacion de edificios, compraventa de solares y propiedades.',
+      'Expertos en compraventa de propiedades. Le ayudamos a rentabilizar sus inversiones. Gestionamos directamente la compra y venta de solares y propiedades, ofreciéndole un asesoramiento integral que garantiza seguridad en cada paso de su proyecto.',
     icon: HomeIcon,
   },
   {
     title: 'Arrendamientos',
     description:
-      'Asesoramiento y gestión legal de contratos de arrendamiento, desahucios, comunidades de propietarios, y resolución de conflictos entre arrendadores y arrendatarios.',
+      'Alquileres seguros y sin problemas. Gestionamos sus contratos de alquiler y resolvemos cualquier conflicto entre propietarios e inquilinos. Especialistas en comunidades de vecinos, reclamaciones de rentas y desahucios con total eficacia.',
     icon: BriefcaseIcon,
   },
 ]
