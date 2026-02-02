@@ -26,7 +26,7 @@ const servicesList: Service[] = [
   {
     title: 'Derecho Penal',
     description:
-      '​​Soluciones para su tranquilidad diaria. Le asesoramos en los momentos clave: herencias, procesos de familia, contratos y reclamaciones por accidentes. Estamos a su lado para defender sus intereses y los de su familia.',
+      '​Protección y defensa especializada. Si se enfrenta a un proceso penal, ejercemos su defensa o acusación con total confidencialidad. Le protegemos en cualquier procedimiento judicial con rigor y compromiso absoluto.',
     icon: LockClosedIcon,
   },
   {

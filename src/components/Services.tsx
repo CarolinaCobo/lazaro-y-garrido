@@ -65,7 +65,7 @@ export function Services() {
 
                 {/* Title */}
                 <h1 className="mb-2 text-lg font-bold uppercase tracking-wide sm:text-xl lg:text-2xl">
-                  L&G INMOBILIARIA
+                  L&G GESTIÓN INMOBILIARIA
                 </h1>
 
                 {/* Description */}

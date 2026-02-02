@@ -34,7 +34,7 @@ export function Hero() {
         </h1>
         <p className="mx-auto mt-6 max-w-3xl pt-6 text-sm tracking-tight text-navy-700 md:text-lg">
           Asesoría y asistencia letrada en procedimientos de orden civil, penal,
-          laboral y administrativo. Tambien ofrecemos servicios inmobiliarios
+          laboral y administrativo. También ofrecemos servicios inmobiliarios
           con obra nueva, compraventa de solares y propiedades.
         </p>
       </Container>
