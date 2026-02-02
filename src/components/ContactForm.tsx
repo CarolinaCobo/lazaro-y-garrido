@@ -3,7 +3,7 @@ import axios from 'axios'
 import { people } from './Team'
 import { EnvelopeIcon, PhoneIcon } from '@heroicons/react/24/outline'
 import { Button } from '@/components/Button'
-import { useState } from 'react'
+import { useState, useEffect, useRef, useCallback } from 'react'
 import { useForm } from 'react-hook-form'
 import { Modal } from './Modal'
 import { Container } from './Container'
@@ -13,7 +13,54 @@ interface FormData {
   lastName: string
   email: string
   message: string
+  mathAnswer: string
+  website?: string // Honeypot field
 }
+
+// Generate a simple math challenge
+function generateMathChallenge(): { question: string; answer: number } {
+  const num1 = Math.floor(Math.random() * 10) + 1
+  const num2 = Math.floor(Math.random() * 10) + 1
+  return {
+    question: `¿Cuánto es ${num1} + ${num2}?`,
+    answer: num1 + num2,
+  }
+}
+
+// Validation patterns
+const NAME_PATTERN = /^[a-zA-ZáéíóúÁÉÍÓÚñÑüÜ\s'-]{2,50}$/
+const EMAIL_PATTERN = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/
+
+// Detect gibberish/random strings (high consonant ratio, unusual patterns)
+function isGibberish(text: string): boolean {
+  if (!text || text.length < 3) return false
+  
+  const cleaned = text.toLowerCase().replace(/[^a-záéíóúñü]/g, '')
+  if (cleaned.length < 3) return false
+  
+  const vowels = cleaned.match(/[aeiouáéíóúü]/g)?.length || 0
+  const consonants = cleaned.length - vowels
+  
+  // Normal text has roughly 40% vowels, gibberish often has <20%
+  const vowelRatio = vowels / cleaned.length
+  if (vowelRatio < 0.15 && cleaned.length > 5) return true
+  
+  // Check for repeating patterns or too many consecutive consonants
+  const consecutiveConsonants = cleaned.match(/[^aeiouáéíóúü]{5,}/g)
+  if (consecutiveConsonants && consecutiveConsonants.length > 0) return true
+  
+  // Check for random uppercase patterns in original text
+  const uppercasePattern = text.match(/[A-Z]/g)?.length || 0
+  const lowercasePattern = text.match(/[a-z]/g)?.length || 0
+  if (uppercasePattern > 3 && lowercasePattern > 3 && uppercasePattern / (uppercasePattern + lowercasePattern) > 0.3) {
+    return true
+  }
+  
+  return false
+}
+
+// Minimum time in milliseconds user should spend on form (5 seconds)
+const MIN_FORM_TIME_MS = 5000
 
 export function ContactForm() {
   const {
@@ -21,27 +68,104 @@ export function ContactForm() {
     handleSubmit,
     formState: { errors },
     reset,
+    setError,
   } = useForm<FormData>()
 
   const [open, setOpen] = useState(false)
+  const [submitError, setSubmitError] = useState<string | null>(null)
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const formLoadTime = useRef<number>(Date.now())
+  
+  // Initialize with placeholder, will be set on client only to avoid hydration mismatch
+  const [mathChallenge, setMathChallenge] = useState({ question: '¿Cuánto es ? + ?', answer: 0 })
+  const [isMounted, setIsMounted] = useState(false)
 
-  const onSubmit = (data: FormData) => {
-    console.log(data)
-    // Transform camelCase to kebab-case to match email template
-    const transformedData = {
-      'first-name': data.firstName,
-      'last-name': data.lastName,
-      email: data.email,
-      message: data.message,
-    }
-    axios
-      .post('https://eo7vnosi4j5466v.m.pipedream.net', transformedData)
-      .then((response) => {
+  // Reset form load time and generate new math challenge when component mounts (client-side only)
+  useEffect(() => {
+    setIsMounted(true)
+    formLoadTime.current = Date.now()
+    setMathChallenge(generateMathChallenge())
+  }, [])
+
+  const onSubmit = useCallback(async (data: FormData) => {
+    setSubmitError(null)
+    setIsSubmitting(true)
+    
+    try {
+      // Honeypot check - if filled, it's a bot
+      if (data.website) {
+        console.log('Bot detected via honeypot')
+        // Silently reject but show success to confuse bots
         setOpen(true)
         reset()
-      })
-      .catch((e) => console.error(e))
-  }
+        setMathChallenge(generateMathChallenge())
+        return
+      }
+      
+      // Time-based check - bots submit too fast
+      const timeSpent = Date.now() - formLoadTime.current
+      if (timeSpent < MIN_FORM_TIME_MS) {
+        console.log('Bot detected via timing')
+        setSubmitError('Por favor, tómese su tiempo para completar el formulario.')
+        return
+      }
+      
+      // Math challenge verification
+      const userAnswer = parseInt(data.mathAnswer, 10)
+      if (isNaN(userAnswer) || userAnswer !== mathChallenge.answer) {
+        setError('mathAnswer', {
+          type: 'manual',
+          message: 'La respuesta no es correcta. Por favor, inténtelo de nuevo.',
+        })
+        setMathChallenge(generateMathChallenge()) // Generate new challenge
+        return
+      }
+      
+      // Gibberish detection
+      if (isGibberish(data.firstName)) {
+        setError('firstName', { 
+          type: 'manual', 
+          message: 'Por favor, introduzca un nombre válido' 
+        })
+        return
+      }
+      
+      if (isGibberish(data.lastName)) {
+        setError('lastName', { 
+          type: 'manual', 
+          message: 'Por favor, introduzca apellidos válidos' 
+        })
+        return
+      }
+      
+      if (isGibberish(data.message)) {
+        setError('message', { 
+          type: 'manual', 
+          message: 'El mensaje parece contener texto no válido' 
+        })
+        return
+      }
+
+      // Transform camelCase to kebab-case to match email template
+      const transformedData = {
+        'first-name': data.firstName.trim(),
+        'last-name': data.lastName.trim(),
+        email: data.email.trim().toLowerCase(),
+        message: data.message.trim(),
+      }
+      
+      await axios.post('https://eo7vnosi4j5466v.m.pipedream.net', transformedData)
+      setOpen(true)
+      reset()
+      setMathChallenge(generateMathChallenge()) // Generate new challenge for next submission
+      formLoadTime.current = Date.now() // Reset timer for next submission
+    } catch (e) {
+      console.error(e)
+      setSubmitError('Error al enviar el formulario. Por favor, inténtelo de nuevo.')
+    } finally {
+      setIsSubmitting(false)
+    }
+  }, [mathChallenge.answer, reset, setError])
 
   return (
     <Container>
@@ -144,6 +268,27 @@ export function ContactForm() {
       >
         <div className="overflow-hidden shadow sm:rounded-md">
           <div className="bg-white px-4 py-5 sm:p-6">
+            {/* Honeypot field - hidden from humans, bots will fill it */}
+            <div className="absolute left-[-9999px]" aria-hidden="true">
+              <label htmlFor="website">
+                Website (leave empty)
+              </label>
+              <input
+                {...register('website')}
+                type="text"
+                name="website"
+                id="website"
+                tabIndex={-1}
+                autoComplete="off"
+              />
+            </div>
+            
+            {submitError && (
+              <div className="mb-4 rounded-md bg-red-50 p-4">
+                <p className="text-sm text-red-700">{submitError}</p>
+              </div>
+            )}
+            
             <div className="grid grid-cols-2 gap-2">
               <div className="col-span-6 sm:col-span-4">
                 <label
@@ -153,17 +298,31 @@ export function ContactForm() {
                   Nombre<span className="text-mallorca-500 ">*</span>
                 </label>
                 <input
-                  {...register('firstName', { required: true })}
+                  {...register('firstName', { 
+                    required: 'Este campo es obligatorio',
+                    minLength: {
+                      value: 2,
+                      message: 'El nombre debe tener al menos 2 caracteres'
+                    },
+                    maxLength: {
+                      value: 50,
+                      message: 'El nombre no puede tener más de 50 caracteres'
+                    },
+                    pattern: {
+                      value: NAME_PATTERN,
+                      message: 'Por favor, introduzca un nombre válido (solo letras)'
+                    }
+                  })}
                   type="text"
                   name="firstName"
                   id="firstName"
-                  placeholder="Maria"
+                  placeholder="María"
                   autoComplete="given-name"
                   className="mt-1 block w-full rounded-md border-navy-300 shadow-sm focus:border-mallorca-500 focus:ring-mallorca-500 sm:text-sm"
                 />
                 {errors.firstName && (
-                  <span className="text-red-600">
-                    Este campo es obligatorio
+                  <span className="text-sm text-red-600">
+                    {errors.firstName.message || 'Este campo es obligatorio'}
                   </span>
                 )}
               </div>
@@ -175,17 +334,31 @@ export function ContactForm() {
                   Apellidos<span className="text-mallorca-500 ">*</span>
                 </label>
                 <input
-                  {...register('lastName', { required: true })}
+                  {...register('lastName', { 
+                    required: 'Este campo es obligatorio',
+                    minLength: {
+                      value: 2,
+                      message: 'Los apellidos deben tener al menos 2 caracteres'
+                    },
+                    maxLength: {
+                      value: 100,
+                      message: 'Los apellidos no pueden tener más de 100 caracteres'
+                    },
+                    pattern: {
+                      value: NAME_PATTERN,
+                      message: 'Por favor, introduzca apellidos válidos (solo letras)'
+                    }
+                  })}
                   type="text"
-                  placeholder="Pérez"
+                  placeholder="Pérez García"
                   name="lastName"
                   id="lastName"
                   autoComplete="family-name"
                   className="mt-1 block w-full rounded-md border-navy-300 shadow-sm focus:border-mallorca-500 focus:ring-mallorca-500 sm:text-sm"
                 />
                 {errors.lastName && (
-                  <span className="text-red-600">
-                    Este campo es obligatorio
+                  <span className="text-sm text-red-600">
+                    {errors.lastName.message || 'Este campo es obligatorio'}
                   </span>
                 )}
               </div>
@@ -198,17 +371,27 @@ export function ContactForm() {
                   <span className="text-mallorca-500 ">*</span>
                 </label>
                 <input
-                  {...register('email', { required: true })}
-                  type="text"
+                  {...register('email', { 
+                    required: 'Este campo es obligatorio',
+                    pattern: {
+                      value: EMAIL_PATTERN,
+                      message: 'Por favor, introduzca una dirección de correo válida'
+                    },
+                    maxLength: {
+                      value: 254,
+                      message: 'El correo no puede tener más de 254 caracteres'
+                    }
+                  })}
+                  type="email"
                   name="email"
                   id="email"
                   autoComplete="email"
-                  placeholder="ej: email@email.com"
+                  placeholder="ejemplo@email.com"
                   className="mt-1 block w-full rounded-md border-navy-300 shadow-sm focus:border-mallorca-500 focus:ring-mallorca-500 sm:text-sm"
                 />
                 {errors.email && (
-                  <span className="text-red-600">
-                    Este campo es obligatorio
+                  <span className="text-sm text-red-600">
+                    {errors.email.message || 'Este campo es obligatorio'}
                   </span>
                 )}
               </div>
@@ -221,7 +404,17 @@ export function ContactForm() {
                 </label>
                 <div className="mt-1">
                   <textarea
-                    {...register('message', { required: true })}
+                    {...register('message', { 
+                      required: 'Este campo es obligatorio',
+                      minLength: {
+                        value: 10,
+                        message: 'El mensaje debe tener al menos 10 caracteres'
+                      },
+                      maxLength: {
+                        value: 2000,
+                        message: 'El mensaje no puede tener más de 2000 caracteres'
+                      }
+                    })}
                     id="message"
                     name="message"
                     rows={3}
@@ -230,19 +423,50 @@ export function ContactForm() {
                     defaultValue={''}
                   />
                   {errors.message && (
-                    <span className="text-red-600">
-                      Este campo es obligatorio
+                    <span className="text-sm text-red-600">
+                      {errors.message.message || 'Este campo es obligatorio'}
                     </span>
                   )}
                 </div>
               </div>
+              
+              {/* Math challenge - anti-spam (only render on client to avoid hydration mismatch) */}
+              {isMounted && (
+                <div className="col-span-6 sm:col-span-4">
+                  <label
+                    htmlFor="mathAnswer"
+                    className="block text-sm font-medium text-navy-700"
+                  >
+                    {mathChallenge.question}
+                    <span className="text-mallorca-500 ">*</span>
+                    <span className="ml-2 text-xs text-navy-400">(verificación anti-spam)</span>
+                  </label>
+                  <input
+                    {...register('mathAnswer', {
+                      required: 'Por favor, responda a la pregunta de verificación',
+                    })}
+                    type="number"
+                    name="mathAnswer"
+                    id="mathAnswer"
+                    placeholder="Escriba el resultado"
+                    className="mt-1 block w-full rounded-md border-navy-300 shadow-sm focus:border-mallorca-500 focus:ring-mallorca-500 sm:text-sm"
+                    autoComplete="off"
+                  />
+                  {errors.mathAnswer && (
+                    <span className="text-sm text-red-600">
+                      {errors.mathAnswer.message || 'Por favor, responda a la pregunta'}
+                    </span>
+                  )}
+                </div>
+              )}
             </div>
             <Button
               className="mt-6 w-full md:w-24"
               color="mallorca"
               type="submit"
+              disabled={isSubmitting}
             >
-              Enviar
+              {isSubmitting ? 'Enviando...' : 'Enviar'}
             </Button>
           </div>
           <Modal open={open} setOpen={setOpen} />

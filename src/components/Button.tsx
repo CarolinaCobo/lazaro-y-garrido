@@ -34,6 +34,7 @@ interface ButtonProps {
   onClick?: () => void
   target?: string
   rel?: string
+  disabled?: boolean
 }
 
 export function Button({
@@ -42,11 +43,13 @@ export function Button({
   className,
   href,
   children,
+  disabled,
   ...props
 }: ButtonProps) {
   className = clsx(
     baseStyles[variant],
     variantStyles[variant][color],
+    disabled && 'opacity-50 cursor-not-allowed',
     className
   )
 
@@ -60,7 +63,7 @@ export function Button({
       {children}
     </Link>
   ) : (
-    <button className={className} {...props}>
+    <button className={className} disabled={disabled} {...props}>
       {children}
     </button>
   )
